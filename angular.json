@@ -115,5 +115,8 @@
       }
     }
   },
-  "defaultProject": "footmatch-frontend"
+  "defaultProject": "footmatch-frontend",
+  "cli": {
+    "analytics": "fcb58e88-dab3-4356-bff6-a7a4489bc06b"
+  }
 }
