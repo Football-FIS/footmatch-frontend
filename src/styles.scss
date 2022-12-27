@@ -2,5 +2,8 @@
 /* IMPORT */
 // @import "~bootstrap/scss/bootstrap.scss";
 // @import "~bootstrap-icons/font/bootstrap-icons.scss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 $sidebar_size: 45px
