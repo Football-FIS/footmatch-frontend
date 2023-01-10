@@ -20,7 +20,7 @@ export class TeamServiceComponent {
         console.log(params);
 
         if (params['code']) {
-          this.http.post<any>(environment.backend_url + '/social-login/google/',
+          this.http.post<any>(environment.team_serv_url + '/social-login/google/',
             {
               code: params['code'],
               client_id: environment.client_id,
@@ -46,10 +46,10 @@ export class TeamServiceComponent {
 
   oauthSignIn() {
     // Google's OAuth 2.0 endpoint for requesting an access token
-    var oauth2Endpoint = 'https://accounts.google.com/o/oauth2/v2/auth';
+    let oauth2Endpoint = 'https://accounts.google.com/o/oauth2/v2/auth';
   
     // Create <form> element to submit parameters to OAuth 2.0 endpoint.
-    var form = document.createElement('form');
+    let form = document.createElement('form');
     form.setAttribute('method', 'GET'); // Send as a GET request.
     form.setAttribute('action', oauth2Endpoint);
   
@@ -62,8 +62,8 @@ export class TeamServiceComponent {
     };
   
     // Add form parameters as hidden input values.
-    for (var p in params) {
-      var input = document.createElement('input');
+    for (let p in params) {
+      let input = document.createElement('input');
       input.setAttribute('type', 'hidden');
       input.setAttribute('name', p);
       input.setAttribute('value', params[p]);
