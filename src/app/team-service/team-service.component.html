@@ -1,12 +1,11 @@
 <body>
    
-    <form>
-        <div><img class="foto" src="https://cdn-icons-png.flaticon.com/512/53/53283.png" width="100" height="100"></div>
-        <button type="button" class="login-with-google-btn sit" >
-          Sign in with Google
-        </button>
-        </form>
-   
+  <div class="old_form">
+    <img class="foto" src="https://cdn-icons-png.flaticon.com/512/53/53283.png" width="100" height="100">
+    <button (click)="oauthSignIn()" class="login-with-google-btn sit" >
+      Sign in with Google
+    </button>
+  </div>
   </body>
   
    
@@ -37,7 +36,7 @@
    
   h3 { color: #4a89dc; }
    
-  form {
+  .old_form {
   width: 380px;
   margin: 4em auto;
   padding: 3em 2em 2em 2em;
