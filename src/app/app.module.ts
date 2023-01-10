@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -9,6 +9,8 @@ import { HomeComponent } from './home/home.component';
 import { RouterModule, Routes } from '@angular/router';
 import { TeamServiceComponent } from './team-service/team-service.component';
 import { MatchComponent } from './match/match.component';
+import { MyMatchesComponent } from './my-matches/my-matches.component';
+import { InterceptorService } from './services/interceptor.service';
 
 const appRoutes:Routes=[
   {path: '', component:HomeComponent},
@@ -23,6 +25,7 @@ const appRoutes:Routes=[
     HomeComponent,
     TeamServiceComponent,
     MatchComponent,
+    MyMatchesComponent,
   ],
   imports: [
     BrowserModule,
@@ -30,7 +33,9 @@ const appRoutes:Routes=[
     HttpClientModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: InterceptorService, multi: true }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
