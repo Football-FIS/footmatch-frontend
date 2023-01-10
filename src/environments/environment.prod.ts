@@ -5,5 +5,5 @@ export const environment = {
   match_status_serv_url: 'https://match-status-service-danaremar.cloud.okteto.net',
   player_serv_url: 'https://player-service-danaremar.cloud.okteto.net',
   client_id: '423408663336-v37pbnhjia2a04e6al3v03bbm62gns8s.apps.googleusercontent.com',
-  front_url: 'http://localhost:4200'
+  front_url: 'https://frontend-danaremar.cloud.okteto.net'
 };
