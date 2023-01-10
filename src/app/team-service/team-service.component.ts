@@ -1,8 +1,9 @@
-import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from "src/environments/environment";
 import { TokenService } from './token.service';
+import { PrincipalComponent } from '../principal.component';
 
 
 @Component({
@@ -10,9 +11,11 @@ import { TokenService } from './token.service';
   templateUrl: './team-service.component.html',
   styleUrls: ['./team-service.component.scss']
 })
-export class TeamServiceComponent {
+export class TeamServiceComponent extends PrincipalComponent implements OnInit{
   
-  constructor(private route: ActivatedRoute, private http: HttpClient, private tokenService: TokenService) { }
+  constructor(private route: ActivatedRoute, private http: HttpClient, private tokenService: TokenService, private router: Router) { 
+    super()
+  }
 
   ngOnInit() {
     this.route.queryParams
@@ -34,9 +37,11 @@ export class TeamServiceComponent {
             next: data => {
               console.log(data)
               this.tokenService.setToken(data['access_token']);
+              this.router.navigateByUrl("/my-matches")
             },
             error: error => {
               console.log(error);
+              this.returnPrincipalError(error)
             }
           })
         }
