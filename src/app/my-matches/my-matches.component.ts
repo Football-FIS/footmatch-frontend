@@ -1,6 +1,4 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { environment } from 'src/environments/environment';
 import { Match } from '../models/match';
 import { PrincipalComponent } from '../principal.component';
 import { MatchService } from '../services/match.service';
@@ -17,19 +15,29 @@ export class MyMatchesComponent extends PrincipalComponent implements OnInit {
     ***************************/
 
     // open modal edit: create / update / delete
-    @ViewChild('openMatchEditModal') openMatchEditModal: any
+    @ViewChild('openMatchModal') openMatchModal: any
 
     // list of matches
     my_matches: Array<Match> = []
+
+    // selected match to edit
+    selected_match: any = null
+
+    
 
 
     /***************************
             CONSTRUCTOR
     ***************************/
 
-    constructor(private matchService: MatchService, private http: HttpClient) {
+    constructor(private matchService: MatchService) {
         super()
     }
+
+
+    /***************************
+        METHODS -> GENERAL
+    ***************************/
 
     ngOnInit() {
         this.loadMyMatches()
@@ -39,23 +47,24 @@ export class MyMatchesComponent extends PrincipalComponent implements OnInit {
         this.matchService.getMyMatches().subscribe({
             next: (n) => {
                 this.containError = false
-                this.my_matches = n.content
+                this.my_matches = n
             },
             error: (e) => {
                 this.returnPrincipalError(e)
             }
         })
-
-        // this.http.get<any>(environment.match_serv_url + '/api/v1/match/list').subscribe({
-        //     next: (n) => {
-        //         this.containError = false
-        //         this.my_matches = n.content
-        //     },
-        //     error: (e) => {
-        //         this.returnPrincipalError(e)
-        //     }
-        // })
     }
 
+    create() {
+        this.selected_match = null
+        // this.openMatchModal.nativeElement.click()
+        this.show_modal = true
+    }
+
+    update(m: Match) {
+        this.selected_match = m
+        // this.openMatchModal.nativeElement.click()
+        this.show_modal = true
+    }
 
 }
