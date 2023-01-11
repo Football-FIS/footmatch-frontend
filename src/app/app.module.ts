@@ -11,6 +11,8 @@ import { TeamServiceComponent } from './team-service/team-service.component';
 import { MatchComponent } from './match/match.component';
 import { MyMatchesComponent } from './my-matches/my-matches.component';
 import { InterceptorService } from './services/interceptor.service';
+import { ModalMatch } from './my-matches/modal_match/modal-match.component';
+import { FormBuilder } from '@angular/forms';
 
 const appRoutes:Routes=[
   {path: '', component:HomeComponent},
@@ -26,6 +28,7 @@ const appRoutes:Routes=[
     TeamServiceComponent,
     MatchComponent,
     MyMatchesComponent,
+    ModalMatch
   ],
   imports: [
     BrowserModule,
@@ -34,7 +37,8 @@ const appRoutes:Routes=[
     RouterModule.forRoot(appRoutes)
   ],
   providers: [
-    { provide: HTTP_INTERCEPTORS, useClass: InterceptorService, multi: true }
+    { provide: HTTP_INTERCEPTORS, useClass: InterceptorService, multi: true },
+    FormBuilder
   ],
   bootstrap: [AppComponent]
 })
