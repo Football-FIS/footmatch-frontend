@@ -19,6 +19,8 @@ export class PrincipalComponent {
         AUXILIAR: TIME
     ***************************/
 
+    actualDate: any
+
     getFormatedDateTimeLikeInput(date: Date) {
         return this.getFormatedDate(date, 'yyyy-MM-ddTHH:mm:ss')
     }
@@ -53,6 +55,21 @@ export class PrincipalComponent {
         return datePipe.transform(date, format);
     }
 
+    loadActualDate() {
+        let dtToday = new Date()
+
+        let month: string = String(dtToday.getMonth() + 1)
+        let day: string = String(dtToday.getDate())
+        let year: string = String(dtToday.getFullYear())
+
+        if (Number(month) < 10)
+            month = '0' + month.toString();
+        if (Number(day) < 10)
+            day = '0' + day.toString();
+
+        this.actualDate = year + '-' + month + '-' + day;
+    }
+
 
     /***************************
             ERRORS
@@ -72,7 +89,7 @@ export class PrincipalComponent {
     }
 
     returnPrincipalError(err: any) {
-        let r = err.error.text
+        let r = err.message
         if (r == undefined) {
             r = 'Error produced'
         }

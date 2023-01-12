@@ -61,7 +61,7 @@ export class MyMatchesComponent extends PrincipalComponent implements OnInit {
         this.show_modal = true
     }
 
-    update(m: Match) {
+    edit(m: Match) {
         this.selected_match = m
         // this.openMatchModal.nativeElement.click()
         this.show_modal = true
