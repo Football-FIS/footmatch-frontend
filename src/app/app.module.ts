@@ -12,12 +12,14 @@ import { MatchComponent } from './match/match.component';
 import { MyMatchesComponent } from './my-matches/my-matches.component';
 import { InterceptorService } from './services/interceptor.service';
 import { ModalMatch } from './my-matches/modal_match/modal-match.component';
+import { ProfileComponent } from './profile/profile.component';
 import { FormBuilder, FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 const appRoutes:Routes=[
   {path: '', component:HomeComponent},
   {path: 'login', component:TeamServiceComponent},
-  {path: 'match', component:MatchComponent}
+  {path: 'match', component:MatchComponent},
+  {path: 'profile', component:ProfileComponent},
 ]
 
 @NgModule({
@@ -28,7 +30,8 @@ const appRoutes:Routes=[
     TeamServiceComponent,
     MatchComponent,
     MyMatchesComponent,
-    ModalMatch
+    ModalMatch,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
