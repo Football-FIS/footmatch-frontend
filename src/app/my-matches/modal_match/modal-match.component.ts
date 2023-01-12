@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output, ViewChild } from "@angular/core";
+import { Component, EventEmitter, Input, OnChanges, OnInit, Output, ViewChild } from "@angular/core";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { Match } from "src/app/models/match";
 import { PrincipalComponent } from "src/app/principal.component";
@@ -9,7 +9,7 @@ import { MatchService } from "src/app/services/match.service";
     templateUrl: './modal-match.component.html',
     styleUrls: ['./modal-match.component.scss']
 })
-export class ModalMatch extends PrincipalComponent implements OnInit {
+export class ModalMatch extends PrincipalComponent implements OnChanges {
 
     /***************************
             GENERAL
@@ -55,13 +55,14 @@ export class ModalMatch extends PrincipalComponent implements OnInit {
         METHODS -> GENERAL
     ***************************/
 
-    ngOnInit(): void {
+    ngOnChanges() {
 
         // fill form fields when update
         this.fillUpdate()
     }
 
     fillUpdate() {
+        this.matchForm.reset()
         if(this.match != null) {
             this.matchForm = this.formBuilder.group({
                 opponent: [this.match.opponent, []],
