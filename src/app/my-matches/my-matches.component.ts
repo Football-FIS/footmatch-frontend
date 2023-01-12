@@ -14,9 +14,6 @@ export class MyMatchesComponent extends PrincipalComponent implements OnInit {
             GENERAL
     ***************************/
 
-    // open modal edit: create / update / delete
-    @ViewChild('openMatchModal') openMatchModal: any
-
     // list of matches
     my_matches: Array<Match> = []
 
@@ -57,13 +54,11 @@ export class MyMatchesComponent extends PrincipalComponent implements OnInit {
 
     create() {
         this.selected_match = null
-        // this.openMatchModal.nativeElement.click()
         this.show_modal = true
     }
 
     edit(m: Match) {
         this.selected_match = m
-        // this.openMatchModal.nativeElement.click()
         this.show_modal = true
     }
 
