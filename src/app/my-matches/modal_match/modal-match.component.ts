@@ -15,9 +15,6 @@ export class ModalMatch extends PrincipalComponent implements OnChanges {
             GENERAL
     ***************************/
 
-    // close modal
-    @ViewChild('closeMatchModal') closeMatchModal: any
-
     // selected match
     @Input()
     match: Match | null = null
