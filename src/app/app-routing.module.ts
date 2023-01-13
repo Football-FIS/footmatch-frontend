@@ -5,6 +5,7 @@ import { MyMatchesComponent } from './my-matches/my-matches.component';
 import { TeamServiceComponent } from './team-service/team-service.component';
 import { ProfileComponent } from './profile/profile.component';
 import { MatchComponent } from './match/match.component';
+import { MatchStatusServiceComponent } from './match-status-service/match-status-service.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -12,6 +13,7 @@ const routes: Routes = [
   // { path: 'my-matches', component: MyMatchesComponent },
   { path: 'profile', component:ProfileComponent},
   { path: 'match/:url', component:MatchComponent},
+  {path: 'match-status', component:MatchStatusServiceComponent},
   { path: '**', component: HomeComponent },
 ];
 

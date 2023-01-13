@@ -14,11 +14,13 @@ import { InterceptorService } from './services/interceptor.service';
 import { ModalMatch } from './my-matches/modal_match/modal-match.component';
 import { ProfileComponent } from './profile/profile.component';
 import { FormBuilder, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatchStatusServiceComponent } from './match-status-service/match-status-service.component';
 
 const appRoutes:Routes=[
   {path: '', component:HomeComponent},
   {path: 'login', component:TeamServiceComponent},
   {path: 'match', component:MatchComponent},
+  {path: 'match-status', component:MatchStatusServiceComponent},
   {path: 'profile', component:ProfileComponent},
 ]
 
@@ -31,7 +33,8 @@ const appRoutes:Routes=[
     MatchComponent,
     MyMatchesComponent,
     ModalMatch,
-    ProfileComponent
+    ProfileComponent,
+    MatchStatusServiceComponent
   ],
   imports: [
     BrowserModule,
