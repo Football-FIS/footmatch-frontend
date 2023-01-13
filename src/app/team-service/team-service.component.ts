@@ -20,7 +20,7 @@ export class TeamServiceComponent extends PrincipalComponent implements OnInit{
   ngOnInit() {
     this.route.queryParams
       .subscribe(params => {
-        console.log(params);
+        //console.log(params);
 
         if (params['code']) {
           this.http.post<any>(environment.team_serv_url + '/social-login/google/',
@@ -35,9 +35,11 @@ export class TeamServiceComponent extends PrincipalComponent implements OnInit{
             }
           ).subscribe({
             next: data => {
-              console.log(data)
+              console.log(data['user'])
+              this.tokenService.setUsername(data['user']['username'])
+              //this.tokenService.setToken(data['user']['username'])
               this.tokenService.setToken(data['access_token']);
-              this.router.navigateByUrl("/my-matches")
+              this.router.navigateByUrl("/profile")
             },
             error: error => {
               console.log(error);
@@ -79,5 +81,5 @@ export class TeamServiceComponent extends PrincipalComponent implements OnInit{
     document.body.appendChild(form);
     form.submit();
   }
-
+  
 }
