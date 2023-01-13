@@ -16,14 +16,14 @@
                     </div>
                     <a class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 sm:mr-2 lg:mr-0 dark:bg-purple-600 dark:hover:bg-purple-700 focus:outline-none dark:focus:ring-purple-800"
                     (click)="logout()" *ngIf="getUsername()!=null">
-                        Sign Up
+                        Log out
                     </a>
                 </div>
                 <div class="flex" *ngIf="getUsername()!=null">
                     <img class="foto" class="mov" src="https://cdn-icons-png.flaticon.com/512/147/147144.png" width="50"
                         height="50">
-                    <p>
-                        <a class="mov" href="./profile">{{getUsername()}}</a>
+                    <p class="flex">
+                        <a class="mov my-auto items-center dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700" href="./profile">@{{getUsername()}}</a>
                     </p>
                 </div>
 
