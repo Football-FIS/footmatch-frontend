@@ -14,6 +14,7 @@ import { InterceptorService } from './services/interceptor.service';
 import { ModalMatch } from './my-matches/modal_match/modal-match.component';
 import { ProfileComponent } from './profile/profile.component';
 import { FormBuilder, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ErrorsComponent } from './errors/errors.component';
 
 const appRoutes:Routes=[
   {path: '', component:HomeComponent},
@@ -31,7 +32,8 @@ const appRoutes:Routes=[
     MatchComponent,
     MyMatchesComponent,
     ModalMatch,
-    ProfileComponent
+    ProfileComponent,
+    ErrorsComponent
   ],
   imports: [
     BrowserModule,

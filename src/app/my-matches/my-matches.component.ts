@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Match } from '../models/match';
 import { PrincipalComponent } from '../principal.component';
 import { MatchService } from '../services/match.service';
