@@ -9,7 +9,7 @@
             <div class="flex items-center lg:order-2" >
                 <div class="flex">
                     <div class="hidden mt-2 mr-4 sm:inline-block" *ngIf="getUsername()==null">
-                        <a class="block text-gray-600 dark:text-gray-400" href="./login" data-size="large"
+                        <a class="block text-gray-600 dark:text-gray-400" [routerLink]="['/login']" data-size="large"
                             data-icon="octicon-star" data-show-count="true" aria-label="Star themesberg/landwind on GitHub" *ngIf="getUsername()==null">
                             Sign In
                         </a>
@@ -23,7 +23,7 @@
                     <img class="foto" class="mov" src="https://cdn-icons-png.flaticon.com/512/147/147144.png" width="50"
                         height="50">
                     <p class="flex">
-                        <a class="mov my-auto items-center dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700" href="./profile">@{{getUsername()}}</a>
+                        <a class="mov my-auto items-center dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700" [routerLink]="['/profile']">@{{getUsername()}}</a>
                     </p>
                 </div>
 
