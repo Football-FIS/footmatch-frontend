@@ -1,0 +1,86 @@
+<div class="form-container">
+    <form (ngSubmit)="submitForm()">
+      <div class="form-group">
+        <label>Name:</label>
+        <input class="form-control" type="text" [(ngModel)]="my_Team.name" name="name">
+      </div>
+      <div class="form-group">
+        <label>Country:</label>
+        <input class="form-control" type="text" [(ngModel)]="my_Team.country" name="country">
+      </div>
+      <div class="form-group">
+        <label>State:</label>
+        <input class="form-control" type="text" [(ngModel)]="my_Team.state" name="state">
+      </div>
+      <div class="form-group">
+        <label>City:</label>
+        <input class="form-control" type="text" [(ngModel)]="my_Team.city" name="city">
+      </div>
+      <div class="form-group">
+        <label>Address:</label>
+        <input class="form-control" type="text" [(ngModel)]="my_Team.address" name="address">
+      </div>
+      <div class="form-group">
+        <label>Coach Name:</label>
+        <input class="form-control" type="text" [(ngModel)]="my_Team.coach_name" name="coach_name">
+      </div>
+      <div class="form-group">
+        <label>Stadium Name:</label>
+        <input class="form-control" type="text" [(ngModel)]="my_Team.stadium_name" name="stadium_name">
+      </div>
+      <div class="form-group">
+        <label>Capacity Stadium:</label>
+        <input class="form-control" type="number" [(ngModel)]="my_Team.capacity_stadium" name="capacity_stadium">
+      </div>
+      <div class="form-group">
+        <label>President Name:</label>
+        <input class="form-control" type="text" [(ngModel)]="my_Team.president_name" name="president_name">
+      </div>
+      <div class="form-group">
+        <label>League Name:</label>
+        <input class="form-control" type="text" [(ngModel)]="my_Team.league_name" name="league_name">
+      </div>
+      <div class="form-group">
+        <label>Latitude:</label>
+        <input class="form-control" type="text" [(ngModel)]="my_Team.latitude" name="latitude">
+      </div>
+      <div class="form-group">
+        <label>Longitude:</label>
+        <input class="form-control" type="text" [(ngModel)]="my_Team.longuitude" name="longitude">
+      </div>
+      <div class="form-group">
+        <label>Expiration Date:</label>
+        <input class="form-control" type="date" [(ngModel)]="my_Team.expiration" name="expiration">
+      </div>
+      <div class="form-group">
+        <label>plan Type</label>
+        <select class="form-control" [(ngModel)]="my_Team.plan_type" name="plan_type">
+            <option value='FRE'>Free</option>
+            <option value='PRE'>Premium</option>
+            <option value='ENT'>Enterprise</option>
+        </select>
+    </div>
+      <div class="form-group">
+        <label>matches</label>
+        <input class="form-control" type="text" [(ngModel)]="my_Team.matches_month_created" name="matches_month_created">
+      </div>
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </div>
+      
+</form>
+  
+<style>
+    .form-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh; /* para ocupar toda la altura de la pantalla */
+      }
+
+      .dark-theme {
+        background-color: #333333;
+        color: #f2f2f2;
+      }
+      
+</style>
