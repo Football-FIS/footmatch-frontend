@@ -27,6 +27,10 @@ export class MatchService {
         let url = this.matchUrl + matchId
         return this.httpClient.get<any>(url)
     }
+    public getMatchByUrl(url: string): Observable<any> {
+        let url2 = this.matchUrl + 'url/' + url
+        return this.httpClient.get<any>(url2)
+    }
 
     // LIST
     public getMyMatches(): Observable<any> {

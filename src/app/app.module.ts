@@ -18,6 +18,7 @@ import { TeamComponent } from './team/team.component';
 import { MyProfileComponent } from './my-profile/my-profile.component';
 import { CreateTeamComponent } from './create-team/create-team.component';
 import { UpdateTeamComponent } from './update-team/update-team.component';
+import { ErrorsComponent } from './errors/errors.component';
 
 const appRoutes:Routes=[
   {path: '', component:HomeComponent},
@@ -41,7 +42,8 @@ const appRoutes:Routes=[
     TeamComponent,
     MyProfileComponent,
     CreateTeamComponent,
-    UpdateTeamComponent
+    UpdateTeamComponent,
+    ErrorsComponent
   ],
   imports: [
     BrowserModule,
