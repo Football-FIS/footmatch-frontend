@@ -14,12 +14,14 @@ import { InterceptorService } from './services/interceptor.service';
 import { ModalMatch } from './my-matches/modal_match/modal-match.component';
 import { ProfileComponent } from './profile/profile.component';
 import { FormBuilder, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { TeamComponent } from './team/team.component';
 
 const appRoutes:Routes=[
   {path: '', component:HomeComponent},
   {path: 'login', component:TeamServiceComponent},
   {path: 'match', component:MatchComponent},
   {path: 'profile', component:ProfileComponent},
+  {path: 'create-team', component:TeamComponent}
 ]
 
 @NgModule({
@@ -31,7 +33,8 @@ const appRoutes:Routes=[
     MatchComponent,
     MyMatchesComponent,
     ModalMatch,
-    ProfileComponent
+    ProfileComponent,
+    TeamComponent
   ],
   imports: [
     BrowserModule,

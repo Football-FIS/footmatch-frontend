@@ -39,6 +39,8 @@ export class TeamServiceComponent extends PrincipalComponent implements OnInit{
               this.tokenService.setUsername(data['user']['username'])
               //this.tokenService.setToken(data['user']['username'])
               this.tokenService.setToken(data['access_token']);
+              this.tokenService.setId(data['user']['pk'])
+              //console.log(data['user']['pk'])
               this.router.navigateByUrl("/profile")
             },
             error: error => {

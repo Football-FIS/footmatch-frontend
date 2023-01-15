@@ -1,20 +1,34 @@
 <div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 items-center justify-center h-screen">
 
   <!-- TEAM -->
-  <div>
+  <div >
     <a class="flex items-center">
       <img src="https://cdn-icons-png.flaticon.com/512/53/53283.png" class="h-10 mr-4 sm:h-9" alt="Landwind Logo" />
       <span class="text-lg font-bold text-Black-600">Equipo &nbsp;</span>
     </a>
-    <div class="text-sm font-bold text-Black-600">
-      Name: Real Madrid
+    <div *ngIf="!userHasTeam" class="bot">
+    <div class="bot">No tienes equipos</div>
+    <br>
+      <a class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full" href="./create-team">
+        Crear Equipo
+      </a>
     </div>
-    <div class="text-sm font-bold text-Black-600">Description:</div>
-    <div class="text-sm font-bold text-Black-600">El real madrid es un equipo campeón de 14 copas de europa</div>
-    <div class="text-sm font-bold text-Black-600">Long : 234982893284 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Lat : 8394834893
-    </div>
-    <div class="text-sm font-bold text-Black-600">Notifications: Yes</div>
-
+  <div>
+    <a class="mov my-auto items-center dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700" href="./profile">{{getTeam().name}}</a>
+    <br>
+    <a class="mov my-auto items-center dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700" href="./profile">{{getTeam().stadium_name}}</a>
+    <br>
+    <a class="mov my-auto items-center dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700" href="./profile">{{getTeam().address}}</a>
+    <br>
+    <br>
+   <a class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full" href="./create-team">
+      Editar equipo
+    </a>
+    <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+      Eliminar equipo
+    </button>
+    
+  </div>
   </div>
 
   <!-- PLAYERS -->
@@ -60,3 +74,9 @@
 
 
 </div>
+
+<style>
+.bot {
+  margin-top: 3%;
+}
+</style>

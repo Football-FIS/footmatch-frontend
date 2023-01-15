@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 const TOKEN_KEY = 'AuthToken';
 const USERNAME_KEY = 'AuthUserName';
 const AUTHORITIES_KEY = 'AuthAuthorities';
+const ID_KEY = 'ID'
 
 @Injectable({
     providedIn: 'root'
@@ -31,5 +32,13 @@ export class TokenService {
 
     public logOut(): void {
         localStorage.clear()
+    }
+
+    public setId(id: string): void {
+        localStorage.setItem(ID_KEY, id)
+    }
+
+    public getId(): string | null {
+        return localStorage.getItem(ID_KEY)
     }
 }
