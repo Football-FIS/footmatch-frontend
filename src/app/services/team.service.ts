@@ -24,7 +24,7 @@ export class TeamService {
 
     // GET
     public getTeamById(teamId: string): Observable<any> {
-        let url = this.teamUrl + teamId
+        let url = this.teamUrl + teamId;
         return this.httpClient.get<any>(url)
     }
 
@@ -35,8 +35,8 @@ export class TeamService {
     }
 
     // UPDATE
-    public updateTeam(team: Team): Observable<any> {
-        let url = this.teamUrl
+    public updateTeam(team: Team, id: string): Observable<any> {
+        let url = this.teamUrl + id + '/'
         return this.httpClient.put<any>(url, team)
     }
 

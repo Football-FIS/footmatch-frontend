@@ -1,0 +1,87 @@
+<div class="form-container">
+  <form (ngSubmit)="submitForm()" [formGroup]="teamForm">
+    <div>
+      <div class="form-group">
+        <label>Name:</label>
+        <input class="form-control" type="text"  name="name" formControlName="name">
+      </div>
+      <div class="form-group">
+        <label>Country:</label>
+        <input class="form-control" type="text" name="country" formControlName="country">
+      </div>
+      <div class="form-group">
+        <label>State:</label>
+        <input class="form-control" type="text" name="state" formControlName="state">
+      </div>
+      <div class="form-group">
+        <label>City:</label>
+        <input class="form-control" type="text" name="city" formControlName="city">
+      </div>
+      <div class="form-group">
+        <label>Address:</label>
+        <input class="form-control" type="text" name="address" formControlName="address">
+      </div>
+      <div class="form-group">
+        <label>Coach Name:</label>
+        <input class="form-control" type="text" name="coach_name" formControlName="coach_name">
+      </div>
+      <div class="form-group">
+        <label>Stadium Name:</label>
+        <input class="form-control" type="text" name="stadium_name" formControlName="stadium_name">
+      </div>
+      <div class="form-group">
+        <label>Capacity Stadium:</label>
+        <input class="form-control" type="number" name="capacity_stadium" formControlName="capacity_stadium">
+      </div>
+      <div class="form-group">
+        <label>President Name:</label>
+        <input class="form-control" type="text" name="president_name" formControlName="president_name">
+      </div>
+      <div class="form-group">
+        <label>League Name:</label>
+        <input class="form-control" type="text" name="league_name" formControlName="league_name">
+      </div>
+      <div class="form-group">
+        <label>Latitude:</label>
+        <input class="form-control" type="text" name="latitude" formControlName="latitude">
+      </div>
+      <div class="form-group">
+        <label>Longitude:</label>
+        <input class="form-control" type="text" name="longitude" formControlName="longitude">
+      </div>
+      <div class="form-group">
+        <label>Expiration Date:</label>
+        <input class="form-control" type="date" name="expiration" formControlName="expiration">
+      </div>
+      <div class="form-group">
+        <label>plan Type</label>
+        <select class="form-control" name="plan_type" formControlName="plan_type">
+            <option value='FRE'>Free</option>
+            <option value='PRE'>Premium</option>
+            <option value='ENT'>Enterprise</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>matches</label>
+        <input class="form-control" type="text" name="matches_month_created" formControlName="matches_month_created">
+      </div>
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </div>
+    </div> 
+  </form>
+</div>
+<style>
+    .form-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh; /* para ocupar toda la altura de la pantalla */
+      }
+
+      .dark-theme {
+        background-color: #333333;
+        color: #f2f2f2;
+      }
+      
+</style>

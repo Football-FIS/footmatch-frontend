@@ -6,6 +6,8 @@ import { TeamServiceComponent } from './team-service/team-service.component';
 import { ProfileComponent } from './profile/profile.component';
 import { MatchComponent } from './match/match.component';
 import { TeamComponent } from './team/team.component';
+import { CreateTeamComponent } from './create-team/create-team.component';
+import { UpdateTeamComponent } from './update-team/update-team.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -13,7 +15,8 @@ const routes: Routes = [
   // { path: 'my-matches', component: MyMatchesComponent },
   { path: 'profile', component:ProfileComponent},
   { path: 'match/:url', component:MatchComponent},
-  {path: 'create-team', component:TeamComponent},
+  {path: 'create-team', component:CreateTeamComponent},
+  {path: 'update-team', component:UpdateTeamComponent},
   { path: '**', component: HomeComponent },
 ];
 
