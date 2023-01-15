@@ -11,7 +11,7 @@ import { TokenService } from "../team-service/token.service";
 export class MatchStatusService {
 
     // URL
-    matchUrl = environment.match_serv_url + '/api/v1/match/'
+    matchStatusUrl = environment.match_status_serv_url + '/api/v1/matchStatus/'
 
     // CONSTRUCTOR
     constructor(private httpClient: HttpClient, private tokenService: TokenService) { }
@@ -23,32 +23,32 @@ export class MatchStatusService {
     */
 
     // GET
-    public getMatchById(matchId: string): Observable<any> {
-        let url = this.matchUrl + matchId
+    public getMatchStatusById(matchStatusId: string): Observable<any> {
+        let url = this.matchStatusUrl + matchStatusId
         return this.httpClient.get<any>(url)
     }
 
-    // LIST CAMBIAR
-    public getMatcheStatus(): Observable<any> {
-        let url = this.matchUrl + 'list'
+    // LIST 
+    public getMatchStatus(): Observable<any> {
+        let url = this.matchStatusUrl + 'list'
         return this.httpClient.get<any>(url)
     }
 
     // CREATE
     public createMatchStatus(matchStatus: MatchStatus): Observable<any> {
-        let url = this.matchUrl
+        let url = this.matchStatusUrl
         return this.httpClient.post<any>(url, matchStatus)
     }
 
     // UPLOAD
     public updateMatchStatus(matchStatus: MatchStatus): Observable<any> {
-        let url = this.matchUrl
+        let url = this.matchStatusUrl
         return this.httpClient.put<any>(url, matchStatus)
     }
 
     // DELETE
-    public deleteMatchStatus(matchId: string): Observable<any> {
-        let url = this.matchUrl + matchId
+    public deleteMatchStatus(matchStatusId: string): Observable<any> {
+        let url = this.matchStatusUrl + matchStatusId
         return this.httpClient.delete<any>(url)
     }
 

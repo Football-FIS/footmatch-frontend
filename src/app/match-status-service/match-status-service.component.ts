@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatchStatus } from '../models/matchStatus';
+import { MatchStatusService } from '../services/matchStatus.service';
 import { PrincipalComponent } from '../principal.component';
 
 @Component({
@@ -13,12 +14,14 @@ export class MatchStatusServiceComponent extends PrincipalComponent implements O
             GENERAL
     ***************************/
 
-    // list of matches
-    my_matches: Array<MatchStatus> = []
+    // list of matchStatus
+    my_matchStatus: Array<MatchStatus> = []
 
     // selected match to edit
-    selected_match: any = null
+    selected_matchStatus: any = null
 
+    // select my team
+    //my_Team: Team = new Team('','','','','','','','',0,'','','','',new Date(),'',0)
     
 
 
@@ -26,34 +29,36 @@ export class MatchStatusServiceComponent extends PrincipalComponent implements O
             CONSTRUCTOR
     ***************************/
 
-    constructor(private matchStatus: MatchStatus) {
+    constructor(private matchStatus: MatchStatusService) {
         super()
     }
 
   ngOnInit(): void {
-    //this.loadMyMatches()
+    this.loadMyMatchStatus()
   }
 
-/*   loadMyMatches() {
-    this.matchService.getMyMatches().subscribe({
+   loadMyMatchStatus() {
+    this.matchStatus.getMatchStatusById("asd").subscribe({
         next: (n) => {
             this.containError = false
-            this.my_matches = n
+            this.my_matchStatus = n
         },
         error: (e) => {
             this.returnPrincipalError(e)
         }
     })
-  } */
+  } 
 
-  create() {
-    this.selected_match = null
-    this.show_modal = true
-  }
-
-  edit(m: MatchStatus) {
-    this.selected_match = m
-    this.show_modal = true
+  submitForm() {
+    this.my_matchStatus.values = this.selected_matchStatus;
+    this.matchStatus.getMatchStatus().subscribe({
+        next: (t) => {
+            console.log("Este es mi estado" + this.my_matchStatus.values)
+        },
+        error: (e) => {
+            this.returnPrincipalError(e)
+        }
+    });
   }
 
 }
