@@ -4,6 +4,7 @@ import { TeamService } from '../services/team.service';
 import { PrincipalComponent } from '../principal.component';
 import { TokenService } from '../team-service/token.service';
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-update-team',
@@ -27,7 +28,7 @@ export class UpdateTeamComponent extends PrincipalComponent implements OnInit {
           CONSTRUCTOR
   ***************************/
 
-  constructor(private teamService: TeamService, private tokenService: TokenService, public formBuilder: FormBuilder) {
+  constructor(private teamService: TeamService, private tokenService: TokenService, public formBuilder: FormBuilder, private router: Router) {
       super()
       this.team_id = this.tokenService.getId();
       this.teamForm = this.formBuilder.group({
@@ -115,6 +116,7 @@ export class UpdateTeamComponent extends PrincipalComponent implements OnInit {
       next: (t) => {
         this.my_Team = t
         console.log("Este es mi equipo actualizado" + this.my_Team.user);
+        this.router.navigateByUrl("/profile")
       },
       error: (e) => {
           this.returnPrincipalError(e)
