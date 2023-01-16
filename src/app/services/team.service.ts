@@ -24,7 +24,7 @@ export class TeamService {
 
     // GET
     public getTeamById(teamId: string): Observable<any> {
-        let url = this.teamUrl + teamId;
+        let url = this.teamUrl + teamId + '?' + Math.random();
         return this.httpClient.get<any>(url)
     }
 
