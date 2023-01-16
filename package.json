@@ -9,8 +9,8 @@
     "build-prod": "ng build --configuration=production",
     "watch": "ng build --watch --configuration development",
     "electron": "ng build --configuration=electron & electron .",
-    "electron-compile-win": "ng build --configuration=electron && electron-packager . --platform=win32 --arch=x64 --configuration=electronjs-prod --icon=src/favicon.ico --out=pack --ignore=/.gitignore",
-    "electron-compile-linux": "ng build --configuration=electron && electron-packager . --platform=linux --arch=x64 --configuration=electronjs-prod --icon=src/favicon.ico --out=pack --ignore=/.gitignore",
+    "electron-compile-win": "ng build --configuration=electron && electron-packager . --platform=win32 --arch=x64 --configuration=electronjs --out=pack --ignore=/.gitignore",
+    "electron-compile-linux": "ng build --configuration=electron && electron-packager . --platform=linux --arch=x64 --configuration=electronjs --out=pack --ignore=/.gitignore",
     "test": "ng test"
   },
   "private": true,
