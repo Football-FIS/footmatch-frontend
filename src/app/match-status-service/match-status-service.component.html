@@ -1,25 +1,25 @@
-<div class="form-container">
-    <form (ngSubmit)="submitForm()">
+<div class="form-container text-center dark-theme">
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
       <div class="form-group my-4">
         <label>Select event  </label>
-        <select class="form-control" [(ngModel)]="my_matchStatus" name="status_type">
-            <option value='STA'>Start</option>
-            <option value='BRE'>Break</option>
-            <option value='RES'>Resumption</option>
-            <option value='GOA'>Goal</option>
-            <option value='END'>End</option>
-            <option value='OTH'>Other</option>
+        <select formControlName="status_type" class="form-control">
+          <option *ngFor="let option of statusOptions" [value]="option.value">{{option.label}}</option>
         </select>
       </div>
       <div class="form-group my-4">
-        <label>Minute  </label>
-        <input class="form-control" type="number" [(ngModel)]="my_matchStatus" name="time">
+        <label>Scoreboard  </label>
+        <input class="form-control" type="text" formControlName="scoreboard" name="scoreboard">
+      </div>
+      <div class="form-group my-4">
+        <label>Info  </label>
+        <input class="form-control" type="text" formControlName="info" name="info">
       </div>
       <div class="form-group my-4">
         <button type="submit" class="btn btn-primary bg-green-700 p-2 hover:bg-green-500 text-white rounded-full items-end ml-auto">Submit</button>
       </div>
     </form>
 
+  <!--
   <form (ngSubmit)="submitForm()">
     <div class="form-group my-4">
       <label>Minute  </label>
@@ -46,6 +46,7 @@
     </div>
   </form>
 </div>
+-->
 
 
 <style>
@@ -59,5 +60,9 @@
       .dark-theme {
         background-color: #333333;
         color: #f2f2f2;
+      }
+
+      .form-control {
+        color: #000;
       }
 </style>
