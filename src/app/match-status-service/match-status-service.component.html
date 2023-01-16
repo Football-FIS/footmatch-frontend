@@ -1,7 +1,7 @@
 <div class="form-container">
     <form (ngSubmit)="submitForm()">
-      <div class="form-group">
-        <label>Select event</label>
+      <div class="form-group my-4">
+        <label>Select event  </label>
         <select class="form-control" [(ngModel)]="my_matchStatus" name="status_type">
             <option value='STA'>Start</option>
             <option value='BRE'>Break</option>
@@ -11,14 +11,40 @@
             <option value='OTH'>Other</option>
         </select>
       </div>
-      <div class="form-group">
-        <label>Time</label>
-        <input class="form-control" type="date" [(ngModel)]="my_matchStatus" name="time">
+      <div class="form-group my-4">
+        <label>Minute  </label>
+        <input class="form-control" type="number" [(ngModel)]="my_matchStatus" name="time">
       </div>
-      <div class="form-group">
+      <div class="form-group my-4">
         <button type="submit" class="btn btn-primary bg-green-700 p-2 hover:bg-green-500 text-white rounded-full items-end ml-auto">Submit</button>
       </div>
     </form>
+
+  <form (ngSubmit)="submitForm()">
+    <div class="form-group my-4">
+      <label>Minute  </label>
+      <input class="form-control" type="number" [(ngModel)]="my_matchStatus" name="time">
+    </div>
+    <div class="form-group my-4">
+      <label>Local Team  </label>
+      <input class="form-control" type="text" [(ngModel)]="my_matchStatus" name="time">
+    </div>
+    <div class="form-group my-4">
+      <label>Visiting  Team  </label>
+      <input class="form-control" type="text" [(ngModel)]="my_matchStatus" name="time">
+    </div>
+    <div class="form-group my-4">
+      <label>Score  </label>
+      <input class="form-control" type="text" [(ngModel)]="my_matchStatus" name="time">
+    </div>
+    <div class="form-group my-4">
+      <label>Info  </label>
+      <input class="form-control" type="text" [(ngModel)]="my_matchStatus" name="time">
+    </div>
+    <div class="form-group my-4">
+      <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Tweet</button>
+    </div>
+  </form>
 </div>
 
 
