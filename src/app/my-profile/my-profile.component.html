@@ -1,36 +1,87 @@
-<a class="flex items-center">
-    <img src="https://cdn-icons-png.flaticon.com/512/53/53283.png" class="h-10 mr-4 sm:h-9" alt="Landwind Logo" />
-    <span class="text-lg font-bold text-Black-600">Equipo &nbsp;</span>
-</a>
+<div class="flex items-center mb-8">
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="w-8 h-8 mr-3" viewBox="0 0 16 16">
+      <path d="M4 2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1Zm3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1Zm3.5-.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1ZM4 5.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1ZM7.5 5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1Zm2.5.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1ZM4.5 8a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1Zm2.5.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1Zm3.5-.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1Z"/>
+      <path d="M2 1a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V1Zm11 0H3v14h3v-2.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 .5.5V15h3V1Z"/>
+    </svg>
+    <span class="text-2xl font-bold">Team</span>
+</div>
 
 <div *ngIf="team == null" class="bot">
     <div class="bot">
-        No tienes equipos
+      You don't have a team created yet.
     </div>
     <br>
-    <a class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full" href="./create-team">
-        Crear Equipo
+    <a href="./create-team" class="text-md text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">
+      Create
     </a>
 </div>
 
 <div *ngIf="team != null">
-    <a class="mov my-auto items-center dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700" href="./profile">
-      {{team.name}}
+  <h4 class="text-xl text-gray-900 font-bold">Information</h4>
+  <ul class="mt-2 text-gray-700">
+      <li class="flex border-y py-2">
+          <span class="font-bold w-36">Name:</span>
+          <span class="text-gray-700">{{team.name}}</span>
+      </li>
+      <li class="flex border-b py-2">
+          <span class="font-bold w-36">Country:</span>
+          <span class="text-gray-700">{{team.country}}</span>
+      </li>
+      <li class="flex border-b py-2">
+          <span class="font-bold w-36">State:</span>
+          <span class="text-gray-700">{{team.state}}</span>
+      </li>
+      <li class="flex border-b py-2">
+          <span class="font-bold w-36">City:</span>
+          <span class="text-gray-700">{{team.city}}</span>
+      </li>
+      <li class="flex border-b py-2">
+          <span class="font-bold w-36">Address:</span>
+          <span class="text-gray-700">{{team.address}}</span>
+      </li>
+      <li class="flex border-b py-2">
+          <span class="font-bold w-36">Coach Name:</span>
+          <span class="text-gray-700">{{team.coach_name}}</span>
+      </li>
+      <li class="flex border-b py-2">
+          <span class="font-bold w-36">Stadium Name:</span>
+          <span class="text-gray-700">{{team.stadium_name}}</span>
+      </li>
+      <li class="flex border-b py-2">
+        <span class="font-bold w-36">Capacity Stadium:</span>
+        <span class="text-gray-700">{{team.capacity_stadium}}</span>
+      </li>
+      <li class="flex border-b py-2">
+        <span class="font-bold w-36">President Name:</span>
+        <span class="text-gray-700">{{team.president_name}}</span>
+      </li>
+      <li class="flex border-b py-2">
+        <span class="font-bold w-36">League name:</span>
+        <span class="text-gray-700">{{team.league_name}}</span>
+      </li>
+      <li class="flex border-b py-2">
+        <span class="font-bold w-36">Latitude:</span>
+        <span class="text-gray-700">{{team.latitude}}</span>
+      </li>
+      <li class="flex border-b py-2">
+        <span class="font-bold w-36">Longuitude:</span>
+        <span class="text-gray-700">{{team.longuitude}}</span>
+      </li>
+      <li class="flex border-b py-2">
+        <span class="font-bold w-36">Expiration:</span>
+        <span class="text-gray-700">{{team.expiration}}</span>
+      </li>
+      <li class="flex border-b py-2">
+        <span class="font-bold w-36">Plan Type:</span>
+        <span class="text-gray-700">{{team.plan_type}}</span>
+      </li>
+  </ul>
+  <div class="flex mt-6">
+    <a href="./update-team" class="text-md mr-5 text-center text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+      Edit
     </a>
-    <br>
-    <a class="mov my-auto items-center dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700" href="./profile">
-      {{team.stadium_name}}
-    </a>
-    <br>
-    <a class="mov my-auto items-center dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700" href="./profile">
-      {{team.address}}
-    </a>
-    <br>
-    <br>
-    <a class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full" href="./create-team">
-      Editar equipo
-    </a>
-    <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full" (click)="deleteTeam()">
-      Eliminar equipo
+    <button (click)="deleteTeam()" class="text-md text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800">
+      Delete
     </button>
+  </div>
 </div>
