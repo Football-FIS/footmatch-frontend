@@ -41,9 +41,15 @@ export class MyMatchesComponent extends PrincipalComponent implements OnInit {
     }
 
     loadMyMatches() {
+
+        // loads from cache
+        this.my_matches = this.matchService.getMyMatchesInCache()
+
+        // refresh to user
         this.matchService.getMyMatches().subscribe({
             next: (n) => {
                 this.containError = false
+                this.matchService.setMyMatchesInCache(n)
                 this.my_matches = n
             },
             error: (e) => {
