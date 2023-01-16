@@ -1,9 +1,11 @@
-import { HttpClient, HttpHeaders } from "@angular/common/http";
+import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
 import { environment } from "src/environments/environment";
 import { Match } from "../models/match";
 import { TokenService } from "../team-service/token.service";
+
+const MY_MATCHES_LIST = 'MyMatchesList'
 
 @Injectable({
     providedIn: 'root'
@@ -54,6 +56,24 @@ export class MatchService {
     public deleteMatch(matchId: string): Observable<any> {
         let url = this.matchUrl + matchId
         return this.httpClient.delete<any>(url)
+    }
+
+    /*
+    *
+    * LOCALSTORAGE CACHE
+    * 
+    */
+
+    public getMyMatchesInCache(): Array<Match> {
+        let a = localStorage.getItem(MY_MATCHES_LIST)
+        if(a!=null) {
+            return JSON.parse(a)
+        }
+        return []
+    }
+
+    public setMyMatchesInCache(myMatches: Array<Match>): void {
+        localStorage.setItem(MY_MATCHES_LIST, JSON.stringify(myMatches))
     }
 
 
