@@ -1,87 +1,78 @@
-<div class="form-container">
-  <form (ngSubmit)="submitForm()" [formGroup]="teamForm">
-    <div>
-      <div class="form-group">
-        <label>Name:</label>
-        <input class="form-control" type="text"  name="name" formControlName="name">
+<div class="text-center pt-32">
+  <h2 class="text-4xl font-semibold">
+    Update Team
+  </h2>
+</div>
+<div class="flex justify-center my-2 mx-4 md:mx-0 mt-10 pb-10">
+  <form (ngSubmit)="submitForm()" class="w-full max-w-xl bg-white rounded-lg shadow-md p-6 border" [formGroup]="teamForm">
+    <div class="flex flex-wrap -mx-3 mb-6">
+      <div class="w-full md:w-full px-3 mb-6">
+          <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">Name</label>
+          <input type="text" formControlName="name" name="name" class="appearance-none block w-full bg-white text-gray-900 font-medium border border-gray-400 rounded-lg py-3 px-3 leading-tight focus:outline-none">
       </div>
-      <div class="form-group">
-        <label>Country:</label>
-        <input class="form-control" type="text" name="country" formControlName="country">
+      <div class="w-full md:w-full px-3 mb-6">
+        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">Country</label>
+        <input formControlName="country" name="country" class="appearance-none block w-full bg-white text-gray-900 font-medium border border-gray-400 rounded-lg py-3 px-3 leading-tight focus:outline-none">
       </div>
-      <div class="form-group">
-        <label>State:</label>
-        <input class="form-control" type="text" name="state" formControlName="state">
+      <div class="w-full md:w-full px-3 mb-6">
+        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">State</label>
+        <input type="text" formControlName="state" name="state" class="appearance-none block w-full bg-white text-gray-900 font-medium border border-gray-400 rounded-lg py-3 px-3 leading-tight focus:outline-none">
       </div>
-      <div class="form-group">
-        <label>City:</label>
-        <input class="form-control" type="text" name="city" formControlName="city">
+      <div class="w-full md:w-full px-3 mb-6">
+        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">City</label>
+        <input type="text" formControlName="city" name="city" class="appearance-none block w-full bg-white text-gray-900 font-medium border border-gray-400 rounded-lg py-3 px-3 leading-tight focus:outline-none">
       </div>
-      <div class="form-group">
-        <label>Address:</label>
-        <input class="form-control" type="text" name="address" formControlName="address">
+      <div class="w-full md:w-full px-3 mb-6">
+        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">Address</label>
+        <input type="text" formControlName="address" name="address" class="appearance-none block w-full bg-white text-gray-900 font-medium border border-gray-400 rounded-lg py-3 px-3 leading-tight focus:outline-none">
       </div>
-      <div class="form-group">
-        <label>Coach Name:</label>
-        <input class="form-control" type="text" name="coach_name" formControlName="coach_name">
+      <div class="w-full md:w-full px-3 mb-6">
+        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">Coach Name</label>
+        <input formControlName="coach_name" name="coach_name" class="appearance-none block w-full bg-white text-gray-900 font-medium border border-gray-400 rounded-lg py-3 px-3 leading-tight focus:outline-none">
       </div>
-      <div class="form-group">
-        <label>Stadium Name:</label>
-        <input class="form-control" type="text" name="stadium_name" formControlName="stadium_name">
+      <div class="w-full md:w-full px-3 mb-6">
+        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">Stadium Name</label>
+        <input formControlName="stadium_name" name="stadium_name" class="appearance-none block w-full bg-white text-gray-900 font-medium border border-gray-400 rounded-lg py-3 px-3 leading-tight focus:outline-none">
       </div>
-      <div class="form-group">
-        <label>Capacity Stadium:</label>
-        <input class="form-control" type="number" name="capacity_stadium" formControlName="capacity_stadium">
+      <div class="w-full md:w-full px-3 mb-6">
+        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">Capacity Stadium</label>
+        <input type="number" formControlName="capacity_stadium" name="capacity_stadium" class="appearance-none block w-full bg-white text-gray-900 font-medium border border-gray-400 rounded-lg py-3 px-3 leading-tight focus:outline-none">
       </div>
-      <div class="form-group">
-        <label>President Name:</label>
-        <input class="form-control" type="text" name="president_name" formControlName="president_name">
+      <div class="w-full md:w-full px-3 mb-6">
+        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">President Name</label>
+        <input formControlName="president_name" name="president_name" class="appearance-none block w-full bg-white text-gray-900 font-medium border border-gray-400 rounded-lg py-3 px-3 leading-tight focus:outline-none">
       </div>
-      <div class="form-group">
-        <label>League Name:</label>
-        <input class="form-control" type="text" name="league_name" formControlName="league_name">
+      <div class="w-full md:w-full px-3 mb-6">
+        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">League Name</label>
+        <input formControlName="league_name" name="league_name" class="appearance-none block w-full bg-white text-gray-900 font-medium border border-gray-400 rounded-lg py-3 px-3 leading-tight focus:outline-none">
       </div>
-      <div class="form-group">
-        <label>Latitude:</label>
-        <input class="form-control" type="text" name="latitude" formControlName="latitude">
+      <div class="w-full md:w-full px-3 mb-6">
+        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">Latitude</label>
+        <input formControlName="latitude" name="latitude" class="appearance-none block w-full bg-white text-gray-900 font-medium border border-gray-400 rounded-lg py-3 px-3 leading-tight focus:outline-none">
       </div>
-      <div class="form-group">
-        <label>Longitude:</label>
-        <input class="form-control" type="text" name="longitude" formControlName="longitude">
+      <div class="w-full md:w-full px-3 mb-6">
+        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">Longitude</label>
+        <input formControlName="longitude" name="longitude" class="appearance-none block w-full bg-white text-gray-900 font-medium border border-gray-400 rounded-lg py-3 px-3 leading-tight focus:outline-none">
       </div>
-      <div class="form-group">
-        <label>Expiration Date:</label>
-        <input class="form-control" type="date" name="expiration" formControlName="expiration">
+      <div class="w-full md:w-full px-3 mb-6">
+        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">Expiration Date</label>
+        <input formControlName="expiration" name="expiration" class="appearance-none block w-full bg-white text-gray-900 font-medium border border-gray-400 rounded-lg py-3 px-3 leading-tight focus:outline-none">
       </div>
-      <div class="form-group">
-        <label>plan Type</label>
-        <select class="form-control" name="plan_type" formControlName="plan_type">
-            <option value='FRE'>Free</option>
-            <option value='PRE'>Premium</option>
-            <option value='ENT'>Enterprise</option>
+      <div class="w-full md:w-full px-3 mb-6">
+        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">Plan Type</label>
+        <select formControlName="plan_type" name="plan_type" class="appearance-none block w-full bg-white text-gray-900 font-medium border border-gray-400 rounded-lg py-3 px-3 leading-tight focus:outline-none">
+          <option value='FRE'>Free</option>
+          <option value='PRE'>Premium</option>
+          <option value='ENT'>Enterprise</option>
         </select>
       </div>
-      <div class="form-group">
-        <label>matches</label>
-        <input class="form-control" type="text" name="matches_month_created" formControlName="matches_month_created">
+      <div class="w-full md:w-full px-3 mb-6">
+        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">Matches</label>
+        <input formControlName="matches_month_created" name="matches_month_created" class="appearance-none block w-full bg-white text-gray-900 font-medium border border-gray-400 rounded-lg py-3 px-3 leading-tight focus:outline-none">
       </div>
-      <div class="form-group">
-        <button type="submit" class="btn btn-primary">Submit</button>
+      <div class="w-full md:w-full px-3 mb-3">
+          <button type="submit" class="appearance-none block w-full bg-blue-600 text-gray-100 font-bold border border-gray-200 rounded-lg py-3 px-3 leading-tight hover:bg-blue-500 focus:outline-none focus:bg-white focus:border-gray-500">Create</button>
       </div>
-    </div> 
+    </div>
   </form>
 </div>
-<style>
-    .form-container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh; /* para ocupar toda la altura de la pantalla */
-      }
-
-      .dark-theme {
-        background-color: #333333;
-        color: #f2f2f2;
-      }
-      
-</style>

@@ -1,55 +1,61 @@
-<div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 items-center justify-center h-screen">
-
-  <!-- TEAM -->
-  <div >
+<div class="max-w-7xl grid gird-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 m-auto pt-32 pb-10">
+  <div class="border rounded-lg shadow-sm p-10">
     <app-my-profile></app-my-profile>
   </div>
-  <!-- PLAYERS -->
-  <div>
-
-    <a class="flex items-center">
-      <img src="https://cdn-icons-png.flaticon.com/512/1040/1040005.png" class="h-10 mr-4 sm:h-9" />
-      <span class="text-lg font-bold text-Black-600">Jugadores &nbsp;</span>
-    </a>
+  <div class="border rounded-lg shadow-sm p-10">
+    <div class="flex items-center mb-8">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="w-8 h-8 mr-3" viewBox="0 0 16 16">
+        <path d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H7Zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm-5.784 6A2.238 2.238 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.325 6.325 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1h4.216ZM4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z"/>
+      </svg>
+      <span class="text-2xl font-bold">Players</span>
+    </div>
     <div>
-      <a class="flex items-center">
-        <span class="text-sm font-bold text-Black-600">Falete (Portero) &nbsp;</span>
-        <img src="https://cdn-icons-png.flaticon.com/512/542/542724.png" class="h-10 mr-4 sm:h-6" />
-        <img src="https://cdn-icons-png.flaticon.com/512/1828/1828911.png" class="h-10 mr-4 sm:h-6" />
-      </a>
-      <a class="flex items-center">
-        <span class="text-sm font-bold text-Black-600">Shakira (Defensa) &nbsp;</span>
-        <img src="https://cdn-icons-png.flaticon.com/512/542/542724.png" class="h-10 mr-4 sm:h-6" />
-        <img src="https://cdn-icons-png.flaticon.com/512/1828/1828911.png" class="h-10 mr-4 sm:h-6" />
-      </a>
-      <a class="flex items-center">
-        <span class="text-sm font-bold text-Black-600">El risitas (Centrocampista) &nbsp;</span>
-        <img src="https://cdn-icons-png.flaticon.com/512/542/542724.png" class="h-10 mr-4 sm:h-6" />
-        <img src="https://cdn-icons-png.flaticon.com/512/1828/1828911.png" class="h-10 mr-4 sm:h-6" />
-      </a>
-      <a class="flex items-center">
-        <span class="text-sm font-bold text-Black-600">Perro Sanxe (Delantero) &nbsp;</span>
-        <img src="https://cdn-icons-png.flaticon.com/512/542/542724.png" class="h-10 mr-4 sm:h-6" />
-        <img src="https://cdn-icons-png.flaticon.com/512/1828/1828911.png" class="h-10 mr-4 sm:h-6" />
-      </a>
-      <a class="flex items-center">
-        <span class="text-sm font-bold text-Black-600">Chiquito (Entrenador) &nbsp;</span>
-        <img src="https://cdn-icons-png.flaticon.com/512/542/542724.png" class="h-10 mr-4 sm:h-6" />
-        <img src="https://cdn-icons-png.flaticon.com/512/1828/1828911.png" class="h-10 mr-4 sm:h-6" />
-      </a>
+      <ul class="mt-2 text-gray-700">
+        <li class="flex border-y py-2">
+            <span class="font-bold w-36">Antonio</span>
+            <span class="text-gray-700 w-36">Portero</span>
+            <span class="text-gray-700 flex">
+              <button class="mr-2 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-xs px-2 py-1 dark:bg-red-blue dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                Modified
+              </button>
+              <button class="text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-xs px-2 py-1 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800">
+                Delete
+              </button>
+            </span>
+        </li>
+        <li class="flex border-y py-2">
+          <span class="font-bold w-36">Antonio</span>
+          <span class="text-gray-700 w-36">Portero</span>
+          <span class="text-gray-700 flex">
+            <button class="mr-2 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-xs px-2 py-1 dark:bg-red-blue dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+              Modified
+            </button>
+            <button class="text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-xs px-2 py-1 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800">
+              Delete
+            </button>
+          </span>
+        </li>
+        <li class="flex border-y py-2">
+          <span class="font-bold w-36">Antonio</span>
+          <span class="text-gray-700 w-36">Portero</span>
+          <span class="text-gray-700 flex">
+            <button class="mr-2 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-xs px-2 py-1 dark:bg-red-blue dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+              Modified
+            </button>
+            <button class="text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-xs px-2 py-1 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800">
+              Delete
+            </button>
+          </span>
+        </li>
+      </ul>
+      <div class="flex mt-6">
+        <button class="text-md text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">
+          Add player
+        </button>
+      </div>
     </div>
   </div>
-
-  <!-- MATCHES -->
-  <div class="mx-5">
+  <div class="border rounded-lg shadow-sm p-10">
     <my-matches></my-matches>
   </div>
-
-
 </div>
-
-<style>
-.bot {
-  margin-top: 3%;
-}
-</style>

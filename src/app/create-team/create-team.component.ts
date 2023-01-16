@@ -3,6 +3,7 @@ import { Team } from '../models/team';
 import { TeamService } from '../services/team.service';
 import { PrincipalComponent } from '../principal.component';
 import { TokenService } from '../team-service/token.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-create-team',
@@ -27,7 +28,7 @@ export class CreateTeamComponent extends PrincipalComponent implements OnInit {
           CONSTRUCTOR
   ***************************/
 
-  constructor(private teamService: TeamService, private tokenService: TokenService) {
+  constructor(private teamService: TeamService, private tokenService: TokenService, private router: Router) {
       super()
       this.teamuser = this.tokenService.getId();
       this.my_Team.user=this.teamuser
@@ -58,7 +59,8 @@ export class CreateTeamComponent extends PrincipalComponent implements OnInit {
       this.my_Team.user = this.teamuser;
       this.teamService.createTeam(this.my_Team).subscribe({
           next: (t) => {
-              console.log("Este es mi equipo" + this.my_Team.user)
+              console.log("Equipo creado." + this.my_Team.user);
+              this.router.navigateByUrl("/profile")
           },
           error: (e) => {
               this.returnPrincipalError(e)

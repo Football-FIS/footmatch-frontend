@@ -1,86 +1,78 @@
-<div class="form-container">
-    <form (ngSubmit)="submitForm()">
-      <div class="form-group">
-        <label>Name:</label>
-        <input class="form-control" type="text" [(ngModel)]="my_Team.name" name="name">
+<div class="text-center pt-32">
+  <h2 class="text-4xl font-semibold">
+    Create Team
+  </h2>
+</div>
+<div class="flex justify-center my-2 mx-4 md:mx-0 mt-10 pb-10">
+  <form (ngSubmit)="submitForm()" class="w-full max-w-xl bg-white rounded-lg shadow-md p-6 border">
+    <div class="flex flex-wrap -mx-3 mb-6">
+      <div class="w-full md:w-full px-3 mb-6">
+          <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">Name</label>
+          <input type="text" [(ngModel)]="my_Team.name" name="name" class="appearance-none block w-full bg-white text-gray-900 font-medium border border-gray-400 rounded-lg py-3 px-3 leading-tight focus:outline-none">
       </div>
-      <div class="form-group">
-        <label>Country:</label>
-        <input class="form-control" type="text" [(ngModel)]="my_Team.country" name="country">
+      <div class="w-full md:w-full px-3 mb-6">
+        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">Country</label>
+        <input [(ngModel)]="my_Team.country" name="country" class="appearance-none block w-full bg-white text-gray-900 font-medium border border-gray-400 rounded-lg py-3 px-3 leading-tight focus:outline-none">
       </div>
-      <div class="form-group">
-        <label>State:</label>
-        <input class="form-control" type="text" [(ngModel)]="my_Team.state" name="state">
+      <div class="w-full md:w-full px-3 mb-6">
+        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">State</label>
+        <input type="text" [(ngModel)]="my_Team.state" name="state" class="appearance-none block w-full bg-white text-gray-900 font-medium border border-gray-400 rounded-lg py-3 px-3 leading-tight focus:outline-none">
       </div>
-      <div class="form-group">
-        <label>City:</label>
-        <input class="form-control" type="text" [(ngModel)]="my_Team.city" name="city">
+      <div class="w-full md:w-full px-3 mb-6">
+        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">City</label>
+        <input type="text" [(ngModel)]="my_Team.city" name="city" class="appearance-none block w-full bg-white text-gray-900 font-medium border border-gray-400 rounded-lg py-3 px-3 leading-tight focus:outline-none">
       </div>
-      <div class="form-group">
-        <label>Address:</label>
-        <input class="form-control" type="text" [(ngModel)]="my_Team.address" name="address">
+      <div class="w-full md:w-full px-3 mb-6">
+        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">Address</label>
+        <input type="text" [(ngModel)]="my_Team.address" name="address" class="appearance-none block w-full bg-white text-gray-900 font-medium border border-gray-400 rounded-lg py-3 px-3 leading-tight focus:outline-none">
       </div>
-      <div class="form-group">
-        <label>Coach Name:</label>
-        <input class="form-control" type="text" [(ngModel)]="my_Team.coach_name" name="coach_name">
+      <div class="w-full md:w-full px-3 mb-6">
+        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">Coach Name</label>
+        <input [(ngModel)]="my_Team.coach_name" name="coach_name" class="appearance-none block w-full bg-white text-gray-900 font-medium border border-gray-400 rounded-lg py-3 px-3 leading-tight focus:outline-none">
       </div>
-      <div class="form-group">
-        <label>Stadium Name:</label>
-        <input class="form-control" type="text" [(ngModel)]="my_Team.stadium_name" name="stadium_name">
+      <div class="w-full md:w-full px-3 mb-6">
+        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">Stadium Name</label>
+        <input [(ngModel)]="my_Team.stadium_name" name="stadium_name" class="appearance-none block w-full bg-white text-gray-900 font-medium border border-gray-400 rounded-lg py-3 px-3 leading-tight focus:outline-none">
       </div>
-      <div class="form-group">
-        <label>Capacity Stadium:</label>
-        <input class="form-control" type="number" [(ngModel)]="my_Team.capacity_stadium" name="capacity_stadium">
+      <div class="w-full md:w-full px-3 mb-6">
+        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">Capacity Stadium</label>
+        <input type="number" [(ngModel)]="my_Team.capacity_stadium" name="capacity_stadium" class="appearance-none block w-full bg-white text-gray-900 font-medium border border-gray-400 rounded-lg py-3 px-3 leading-tight focus:outline-none">
       </div>
-      <div class="form-group">
-        <label>President Name:</label>
-        <input class="form-control" type="text" [(ngModel)]="my_Team.president_name" name="president_name">
+      <div class="w-full md:w-full px-3 mb-6">
+        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">President Name</label>
+        <input [(ngModel)]="my_Team.president_name" name="president_name" class="appearance-none block w-full bg-white text-gray-900 font-medium border border-gray-400 rounded-lg py-3 px-3 leading-tight focus:outline-none">
       </div>
-      <div class="form-group">
-        <label>League Name:</label>
-        <input class="form-control" type="text" [(ngModel)]="my_Team.league_name" name="league_name">
+      <div class="w-full md:w-full px-3 mb-6">
+        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">League Name</label>
+        <input [(ngModel)]="my_Team.league_name" name="league_name" class="appearance-none block w-full bg-white text-gray-900 font-medium border border-gray-400 rounded-lg py-3 px-3 leading-tight focus:outline-none">
       </div>
-      <div class="form-group">
-        <label>Latitude:</label>
-        <input class="form-control" type="text" [(ngModel)]="my_Team.latitude" name="latitude">
+      <div class="w-full md:w-full px-3 mb-6">
+        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">Latitude</label>
+        <input [(ngModel)]="my_Team.latitude" name="latitude" class="appearance-none block w-full bg-white text-gray-900 font-medium border border-gray-400 rounded-lg py-3 px-3 leading-tight focus:outline-none">
       </div>
-      <div class="form-group">
-        <label>Longitude:</label>
-        <input class="form-control" type="text" [(ngModel)]="my_Team.longuitude" name="longitude">
+      <div class="w-full md:w-full px-3 mb-6">
+        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">Longitude</label>
+        <input [(ngModel)]="my_Team.longuitude" name="longitude" class="appearance-none block w-full bg-white text-gray-900 font-medium border border-gray-400 rounded-lg py-3 px-3 leading-tight focus:outline-none">
       </div>
-      <div class="form-group">
-        <label>Expiration Date:</label>
-        <input class="form-control" type="date" [(ngModel)]="my_Team.expiration" name="expiration">
+      <div class="w-full md:w-full px-3 mb-6">
+        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">Expiration Date</label>
+        <input [(ngModel)]="my_Team.expiration" name="expiration" class="appearance-none block w-full bg-white text-gray-900 font-medium border border-gray-400 rounded-lg py-3 px-3 leading-tight focus:outline-none">
       </div>
-      <div class="form-group">
-        <label>plan Type</label>
-        <select class="form-control" [(ngModel)]="my_Team.plan_type" name="plan_type">
-            <option value='FRE'>Free</option>
-            <option value='PRE'>Premium</option>
-            <option value='ENT'>Enterprise</option>
+      <div class="w-full md:w-full px-3 mb-6">
+        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">Plan Type</label>
+        <select [(ngModel)]="my_Team.plan_type" name="plan_type" class="appearance-none block w-full bg-white text-gray-900 font-medium border border-gray-400 rounded-lg py-3 px-3 leading-tight focus:outline-none">
+          <option value='FRE'>Free</option>
+          <option value='PRE'>Premium</option>
+          <option value='ENT'>Enterprise</option>
         </select>
+      </div>
+      <div class="w-full md:w-full px-3 mb-6">
+        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">Matches</label>
+        <input [(ngModel)]="my_Team.matches_month_created" name="matches_month_created" class="appearance-none block w-full bg-white text-gray-900 font-medium border border-gray-400 rounded-lg py-3 px-3 leading-tight focus:outline-none">
+      </div>
+      <div class="w-full md:w-full px-3 mb-3">
+          <button type="submit" class="appearance-none block w-full bg-blue-600 text-gray-100 font-bold border border-gray-200 rounded-lg py-3 px-3 leading-tight hover:bg-blue-500 focus:outline-none focus:bg-white focus:border-gray-500">Create</button>
+      </div>
     </div>
-      <div class="form-group">
-        <label>matches</label>
-        <input class="form-control" type="text" [(ngModel)]="my_Team.matches_month_created" name="matches_month_created">
-      </div>
-      <div class="form-group">
-        <button type="submit" class="btn btn-primary">Submit</button>
-      </div>
-      
-</form>
-  
-<style>
-    .form-container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh; /* para ocupar toda la altura de la pantalla */
-      }
-
-      .dark-theme {
-        background-color: #333333;
-        color: #f2f2f2;
-      }
-      
-</style>
+  </form>
+</div>
