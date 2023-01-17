@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Match } from '../models/match';
+import { MatchStatus } from '../models/matchStatus';
 import { PrincipalComponent } from '../principal.component';
 import { MatchService } from '../services/match.service';
+import { MatchStatusService } from '../services/matchStatus.service';
 
 @Component({
   selector: 'app-match',
@@ -13,8 +15,10 @@ export class MatchComponent extends PrincipalComponent implements OnInit {
 
   url: string = ''
   match: Match | null | undefined
+  matchStatus: MatchStatus | null | undefined
+  matchStatusList: MatchStatus[] = [];
 
-  constructor(private route: ActivatedRoute, private matchService: MatchService) {
+  constructor(private route: ActivatedRoute, private matchService: MatchService, private matchStatusService: MatchStatusService) {
     super();
   }
 
@@ -30,6 +34,7 @@ export class MatchComponent extends PrincipalComponent implements OnInit {
     this.matchService.getMatchByUrl(this.url).subscribe({
       next: (n) => {
         this.containError = false
+        //crear funcion para insertar lista de eventos
         this.match = n
       },
       error: (e) => {
@@ -37,6 +42,36 @@ export class MatchComponent extends PrincipalComponent implements OnInit {
       }
     })
 
+    this.loadMyStatus();
+
+  }
+
+  loadMyStatus(){
+
+    // get match status information
+    this.matchStatusService.getMatchStatusByMatchId(this.url).subscribe({
+      next: (n) => {
+        this.containError = false
+        this.matchStatusList = n
+        
+        // now, sort the list to bring us the newest status
+        this.matchStatusList.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+        this.matchStatus = this.matchStatusList[0];
+      },
+      error: (e) => {
+        this.returnPrincipalError(e)
+      }
+    })
+
+  }
+
+
+  getLatestMatchStatus(): MatchStatus[] {
+    return this.matchStatusList.sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime()).slice(-3);
+  }
+
+  openModal() {
+    this.show_modal = true
   }
 
 }

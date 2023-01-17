@@ -14,6 +14,7 @@ import { InterceptorService } from './services/interceptor.service';
 import { ModalMatch } from './my-matches/modal_match/modal-match.component';
 import { ProfileComponent } from './profile/profile.component';
 import { FormBuilder, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatchStatusServiceComponent } from './match-status-service/match-status-service.component';
 import { TeamComponent } from './team/team.component';
 import { MyProfileComponent } from './my-profile/my-profile.component';
 import { CreateTeamComponent } from './create-team/create-team.component';
@@ -24,6 +25,7 @@ const appRoutes:Routes=[
   {path: '', component:HomeComponent},
   {path: 'login', component:TeamServiceComponent},
   {path: 'match', component:MatchComponent},
+  {path: 'match-status', component:MatchStatusServiceComponent},
   {path: 'profile', component:ProfileComponent},
   {path: 'create-team', component:CreateTeamComponent},
   {path: 'update-team', component:UpdateTeamComponent}
@@ -39,6 +41,7 @@ const appRoutes:Routes=[
     MyMatchesComponent,
     ModalMatch,
     ProfileComponent,
+    MatchStatusServiceComponent,
     TeamComponent,
     MyProfileComponent,
     CreateTeamComponent,
