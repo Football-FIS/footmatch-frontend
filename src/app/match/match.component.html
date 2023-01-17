@@ -26,11 +26,13 @@
     </div>
 </div>
 
-<button type="button" (click)="openModal()" class="mt-5 text-md text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">
-    Create status
-</button>
+<div class="mx-auto place-self-center text-center">
+    <button type="button" (click)="openModal()" class="mt-5 text-md text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">
+        Create status
+    </button>
+</div>
 
-<match-status-service ngClass="{{show_modal ? '': 'hidden'}}" (close_modal)="closeModal()"></match-status-service>
+<match-status-service ngClass="{{show_modal ? '': 'hidden'}}" [url]="url" (reload)="loadMyStatus()" (close_modal)="closeModal()"></match-status-service>
 
 
 <!-- Start block -->

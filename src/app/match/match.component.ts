@@ -42,6 +42,12 @@ export class MatchComponent extends PrincipalComponent implements OnInit {
       }
     })
 
+    this.loadMyStatus();
+
+  }
+
+  loadMyStatus(){
+
     // get match status information
     this.matchStatusService.getMatchStatusByMatchId(this.url).subscribe({
       next: (n) => {

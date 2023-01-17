@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { MatchStatus } from '../models/matchStatus';
 import { MatchStatusService } from '../services/matchStatus.service';
 import { PrincipalComponent } from '../principal.component';
@@ -15,6 +15,10 @@ export class MatchStatusServiceComponent extends PrincipalComponent implements O
   /***************************
           GENERAL
   ***************************/
+
+  // selected match
+  @Input()
+  url: string | null = null
 
   // close modal
   @Output()
@@ -64,9 +68,12 @@ export class MatchStatusServiceComponent extends PrincipalComponent implements O
       scoreboard: new FormControl(''),
       uidPlayer: new FormControl('')
     });
+
   }
 
   ngOnInit(): void {
+    this.form.patchValue({ matchId: this.url });
+
     // this.loadMyMatchStatus()
   }
 
@@ -105,6 +112,7 @@ export class MatchStatusServiceComponent extends PrincipalComponent implements O
 
     );
     this.form.reset();
+    this.closeModal();
   }
 
   override closeModal() {
