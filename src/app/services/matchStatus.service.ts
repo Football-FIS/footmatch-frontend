@@ -11,7 +11,7 @@ import { TokenService } from "../team-service/token.service";
 export class MatchStatusService {
 
     // URL
-    matchStatusUrl = environment.match_status_serv_url + '/api/v1/matchStatus/'
+    matchStatusUrl = environment.match_status_serv_url + '/api/v1/match_status/'
 
     // CONSTRUCTOR
     constructor(private httpClient: HttpClient, private tokenService: TokenService) { }
@@ -28,9 +28,9 @@ export class MatchStatusService {
         return this.httpClient.get<any>(url)
     }
 
-    // LIST 
-    public getMatchStatus(): Observable<any> {
-        let url = this.matchStatusUrl + 'list'
+    // GET By MATCHID 
+    public getMatchStatusByMatchId(matchId: string): Observable<any> {
+        let url = this.matchStatusUrl + 'matchId/' + matchId
         return this.httpClient.get<any>(url)
     }
 
