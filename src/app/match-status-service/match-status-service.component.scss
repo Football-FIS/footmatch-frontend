@@ -1,0 +1,16 @@
+.form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    /* para ocupar toda la altura de la pantalla */
+}
+
+.dark-theme {
+    background-color: #333333;
+    color: #f2f2f2;
+}
+
+.form-control {
+    color: #000;
+}

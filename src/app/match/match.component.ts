@@ -64,4 +64,8 @@ export class MatchComponent extends PrincipalComponent implements OnInit {
     return this.matchStatusList.sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime()).slice(-3);
   }
 
+  openModal() {
+    this.show_modal = true
+  }
+
 }
