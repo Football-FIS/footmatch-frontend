@@ -30,7 +30,7 @@ export class MatchStatusService {
 
     // GET By MATCHID 
     public getMatchStatusByMatchId(matchId: string): Observable<any> {
-        let url = this.matchStatusUrl + 'matchId/' + matchId
+        let url = this.matchStatusUrl + 'matchid/' + matchId
         return this.httpClient.get<any>(url)
     }
 
