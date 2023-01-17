@@ -117,6 +117,7 @@ export class MatchStatusServiceComponent extends PrincipalComponent implements O
 
   override closeModal() {
     this.close_modal.emit(true)
+    location.reload();
 }
 
 }
