@@ -47,15 +47,16 @@ export class MatchComponent extends PrincipalComponent implements OnInit {
       next: (n) => {
         this.containError = false
         this.matchStatusList = n
+        
+        // now, sort the list to bring us the newest status
+        this.matchStatusList.sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime());
+        this.matchStatus = this.matchStatusList[0];
       },
       error: (e) => {
         this.returnPrincipalError(e)
       }
     })
 
-    // now, sort the list to bring us the newest status
-    this.matchStatusList.sort((a: MatchStatus, b: MatchStatus) => new Date(b.date).getTime() - new Date(a.date).getTime());
-    this.matchStatus = this.matchStatusList[0];
   }
 
 
