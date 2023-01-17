@@ -4,6 +4,7 @@ import { Observable } from "rxjs";
 import { environment } from "src/environments/environment";
 import { MatchStatus } from "../models/matchStatus";
 import { TokenService } from "../team-service/token.service";
+import { FormControl, FormGroup } from '@angular/forms';
 
 @Injectable({
     providedIn: 'root'
@@ -39,6 +40,19 @@ export class MatchStatusService {
         let url = this.matchStatusUrl
         return this.httpClient.post<any>(url, matchStatus)
     }
+
+    // POST TEMPORAL
+
+    public postMatchStatus(form:FormGroup): Observable<any> {
+      let httpOptions = {
+        headers: new HttpHeaders({
+          'Content-Type':  'application/json',
+          'Authorization': 'Bearer test'
+        })
+      };
+      let url = this.matchStatusUrl
+      return this.httpClient.post<any>(url, form.value, httpOptions)
+  }
 
     // UPLOAD
     public updateMatchStatus(matchStatus: MatchStatus): Observable<any> {

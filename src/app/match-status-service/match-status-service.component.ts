@@ -91,12 +91,16 @@ export class MatchStatusServiceComponent extends PrincipalComponent implements O
     let now = new Date();
     // this.my_matchStatus.values = this.selected_matchStatus;
     this.form.patchValue({date:now});
-    this.form.patchValue({user_id:2147483647, matchId: "string", uidPlayer:"null"});
+    this.form.patchValue({user_id:2147483647, uidPlayer:"null"});
     console.log(this.form.value)
-    this.http.post('http://localhost:8000/api/v1/match_status/', this.form.value, httpOptions).subscribe(
+    this.matchStatus.postMatchStatus(this.form).subscribe(
+
       (response: any) => console.log(response),
+
       (error: any) => console.log(error)
+
     );
+    this.form.reset();
   }
 
 }

@@ -49,7 +49,7 @@ export class MatchComponent extends PrincipalComponent implements OnInit {
         this.matchStatusList = n
         
         // now, sort the list to bring us the newest status
-        this.matchStatusList.sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime());
+        this.matchStatusList.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
         this.matchStatus = this.matchStatusList[0];
       },
       error: (e) => {
@@ -61,7 +61,7 @@ export class MatchComponent extends PrincipalComponent implements OnInit {
 
 
   getLatestMatchStatus(): MatchStatus[] {
-    return this.matchStatusList.slice(-3);
+    return this.matchStatusList.sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime()).slice(-3);
   }
 
 }

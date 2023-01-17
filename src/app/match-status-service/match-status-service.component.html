@@ -1,6 +1,10 @@
 <div class="form-container text-center dark-theme">
     <form [formGroup]="form" (ngSubmit)="onSubmit()">
       <div class="form-group my-4">
+        <label>Match  </label>
+        <input class="form-control" type="text" formControlName="matchId" name="matchId">
+      </div>
+      <div class="form-group my-4">
         <label>Select event  </label>
         <select formControlName="status_type" class="form-control">
           <option *ngFor="let option of statusOptions" [value]="option.value">{{option.label}}</option>
