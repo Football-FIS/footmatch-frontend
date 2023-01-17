@@ -14,7 +14,15 @@ import { InterceptorService } from './services/interceptor.service';
 import { ModalMatch } from './my-matches/modal_match/modal-match.component';
 import { ProfileComponent } from './profile/profile.component';
 import { FormBuilder, FormsModule, ReactiveFormsModule } from '@angular/forms';
+<<<<<<< HEAD
 import { MatchStatusServiceComponent } from './match-status-service/match-status-service.component';
+=======
+import { TeamComponent } from './team/team.component';
+import { MyProfileComponent } from './my-profile/my-profile.component';
+import { CreateTeamComponent } from './create-team/create-team.component';
+import { UpdateTeamComponent } from './update-team/update-team.component';
+import { ErrorsComponent } from './errors/errors.component';
+>>>>>>> develop
 
 const appRoutes:Routes=[
   {path: '', component:HomeComponent},
@@ -22,6 +30,8 @@ const appRoutes:Routes=[
   {path: 'match', component:MatchComponent},
   {path: 'match-status', component:MatchStatusServiceComponent},
   {path: 'profile', component:ProfileComponent},
+  {path: 'create-team', component:CreateTeamComponent},
+  {path: 'update-team', component:UpdateTeamComponent}
 ]
 
 @NgModule({
@@ -34,7 +44,15 @@ const appRoutes:Routes=[
     MyMatchesComponent,
     ModalMatch,
     ProfileComponent,
+<<<<<<< HEAD
     MatchStatusServiceComponent
+=======
+    TeamComponent,
+    MyProfileComponent,
+    CreateTeamComponent,
+    UpdateTeamComponent,
+    ErrorsComponent
+>>>>>>> develop
   ],
   imports: [
     BrowserModule,

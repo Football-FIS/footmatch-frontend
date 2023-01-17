@@ -31,7 +31,7 @@ export class MatchComponent extends PrincipalComponent implements OnInit {
     });
 
     // get match information
-    this.matchService.getMatchById(this.url).subscribe({
+    this.matchService.getMatchByUrl(this.url).subscribe({
       next: (n) => {
         this.containError = false
         //crear funcion para insertar lista de eventos

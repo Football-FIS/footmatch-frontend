@@ -86,7 +86,7 @@ export class ModalMatch extends PrincipalComponent implements OnChanges {
     }
 
     getMatch(): Match {
-        let m = new Match('', 0, this.matchForm.value.opponent, this.matchForm.value.is_local, this.matchForm.value.alignment, this.matchForm.value.url, this.matchForm.value.city, '', new Date(this.matchForm.value.start_date), true)
+        let m = new Match('', 0, this.matchForm.value.opponent, this.matchForm.value.is_local!=null, this.matchForm.value.alignment, this.matchForm.value.url, this.matchForm.value.city, '', new Date(this.matchForm.value.start_date), false)
         // only when update 
         if(this.match) {
             m.id = this.match.id
