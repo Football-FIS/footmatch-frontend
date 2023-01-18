@@ -20,6 +20,7 @@ import { MyProfileComponent } from './my-profile/my-profile.component';
 import { CreateTeamComponent } from './create-team/create-team.component';
 import { UpdateTeamComponent } from './update-team/update-team.component';
 import { ErrorsComponent } from './errors/errors.component';
+import { PlayersComponent } from './players/players.component';
 
 const appRoutes:Routes=[
   {path: '', component:HomeComponent},
@@ -44,6 +45,7 @@ const appRoutes:Routes=[
     MatchStatusServiceComponent,
     TeamComponent,
     MyProfileComponent,
+    PlayersComponent,
     CreateTeamComponent,
     UpdateTeamComponent,
     ErrorsComponent
