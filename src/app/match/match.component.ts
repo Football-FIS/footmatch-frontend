@@ -17,6 +17,7 @@ export class MatchComponent extends PrincipalComponent implements OnInit {
   match: Match | null | undefined
   matchStatus: MatchStatus | null | undefined
   matchStatusList: MatchStatus[] = [];
+  matchStatusList4update: MatchStatus[] = [];
 
   constructor(private route: ActivatedRoute, private matchService: MatchService, private matchStatusService: MatchStatusService) {
     super();
@@ -57,6 +58,7 @@ export class MatchComponent extends PrincipalComponent implements OnInit {
         // now, sort the list to bring us the newest status
         this.matchStatusList.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
         this.matchStatus = this.matchStatusList[0];
+        this.matchStatusList4update = this.getLatestMatchStatus();
       },
       error: (e) => {
         this.returnPrincipalError(e)
