@@ -10,7 +10,7 @@
               <h3 class="text-xl font-medium leading-6 text-gray-900 dark:text-gray-100" id="modal-title">
                 Create status</h3>
               <div class="mt-2 mb-5">
-                <p class="text-md text-gray-200">
+                <p class="text-md text-gray-800">
                   Status will be edited when you click on the "Save" button.
                 </p>
                 <errors-footmatch [containError]="containError"
@@ -20,22 +20,22 @@
               <!-- PREVIOUS CONTENT -->
               <div>
                 <div class="form-group my-4">
-                  <label style="color: aliceblue;">Match </label>
-                  <input class="form-control" type="text" formControlName="matchId" name="matchId">
+                  <label style="color: rgb(0, 0, 0);">Match </label>
+                  <input class="form-control border-black border rounded" type="text" formControlName="matchId" name="matchId">
                 </div>
                 <div class="form-group my-4">
-                  <label style="color: aliceblue;">Select event </label>
-                  <select formControlName="status_type" class="form-control">
+                  <label style="color: rgb(0, 0, 0);">Select event </label>
+                  <select formControlName="status_type" class="form-control border-black border rounded">
                     <option *ngFor="let option of statusOptions" [value]="option.value">{{option.label}}</option>
                   </select>
                 </div>
                 <div class="form-group my-4">
-                  <label style="color: aliceblue;">Scoreboard </label>
-                  <input class="form-control" type="text" formControlName="scoreboard" name="scoreboard">
+                  <label style="color: rgb(0, 0, 0);">Scoreboard </label>
+                  <input class="form-control border-black border rounded" type="text" formControlName="scoreboard" name="scoreboard">
                 </div>
                 <div class="form-group my-4">
-                  <label style="color: aliceblue;">Info </label>
-                  <input class="form-control" type="text" formControlName="info" name="info">
+                  <label style="color: rgb(0, 0, 0);">Info </label>
+                  <input class="form-control border-black border rounded" type="text" formControlName="info" name="info">
                 </div>
               </div>
 
