@@ -1,9 +1,10 @@
 export class Player {
+    /** Constructor */
     constructor(
         _id: string,
         team_id: number,
         first_name: string,
-        last_name: boolean,
+        last_name: string,
         email: string,
         position: string,
     ) {
@@ -18,7 +19,19 @@ export class Player {
     _id: string
     team_id: number
     first_name: string
-    last_name: boolean
+    last_name: string
     email: string
     position: string
+}
+
+/** Default function to create an empty player */
+export function defaultPlayer(): Player {
+    return new Player(
+        "",
+        0,
+        "New",
+        "Player",
+        "example@email.com",
+        "DELANTERO"
+    );
 }
