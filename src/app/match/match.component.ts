@@ -23,13 +23,12 @@ export class MatchComponent extends PrincipalComponent implements OnInit {
   local: string | null | undefined;
   oponente: string | null | undefined;
   teamuser: any = null;
-  my_Team: Team = new Team('','','','','','','','',0,'','','','',new Date(),'',0)
   
   constructor(private route: ActivatedRoute, private matchService: MatchService, private tokenService: TokenService, private matchStatusService: MatchStatusService, private teamService: TeamService) {
     super();
     
     this.teamuser = this.tokenService.getId();
-    this.my_Team.user=this.teamuser
+    console.log(this.tokenService)
   }
 
   ngOnInit() {
@@ -44,7 +43,6 @@ export class MatchComponent extends PrincipalComponent implements OnInit {
       next: (n) => {
         this.containError = false
         this.match = n
-        this.loadMatchInfo();
         this.loadMyTeam();
         this.loadMyStatus();
         this.hasBreak();
@@ -97,21 +95,21 @@ export class MatchComponent extends PrincipalComponent implements OnInit {
     }
   }
 
-  loadMatchInfo(){
+  loadMatchInfo(mine: string){
     if(!this.match?.is_local){
       this.local = this.match?.opponent;
-      this.oponente = this.my_Team.name;
+      this.oponente = mine;
     }else if(this.match.is_local){
       this.oponente = this.match.opponent;
-      this.local = this.my_Team.name;
+      this.local = mine;
     }
   }
 
   loadMyTeam() {
-    this.teamService.getTeamByIdReal(this.teamuser).subscribe({
+    this.teamService.getTeamById(this.teamuser).subscribe({
         next: (t) => {
             this.containError = false
-            this.my_Team = t
+            this.loadMatchInfo(t['name']);
         },
         error: (e) => {
             this.returnPrincipalError(e)
