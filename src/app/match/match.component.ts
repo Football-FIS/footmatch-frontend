@@ -65,7 +65,7 @@ export class MatchComponent extends PrincipalComponent implements OnInit {
         this.matchStatusList.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
         this.matchStatus = this.matchStatusList[0];
         this.matchStatusList4update = this.getLatestMatchStatus();
-        this.hasBreak(this.matchStatusList[0]);
+        this.hasBreak();
       },
       error: (e) => {
         this.returnPrincipalError(e)
@@ -86,9 +86,9 @@ export class MatchComponent extends PrincipalComponent implements OnInit {
     return filteredList.length > 0;
   }
 
-  hasBreak(matchSt: MatchStatus){
+  hasBreak(){
     const estado = "BRE"
-    if(matchSt.status_type==estado){
+    if(this.matchStatus?.status_type==estado){
       this.estadoActual = 'DESCANSO'
     }else if(this.hasStatus(estado)){
       this.estadoActual = "SEGUNDA PARTE"
@@ -135,14 +135,6 @@ export class MatchComponent extends PrincipalComponent implements OnInit {
       } else {
         this.weather = 'sunny'
       }
-    }
-  }
-
-
-  onCloseModal(formData: any) {
-    if (formData) {
-      // se ha enviado el formulario y se cierra el modal
-      this.loadMyStatus();
     }
   }
 }

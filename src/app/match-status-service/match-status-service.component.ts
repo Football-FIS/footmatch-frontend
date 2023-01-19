@@ -16,13 +16,15 @@ export class MatchStatusServiceComponent extends PrincipalComponent implements O
           GENERAL
   ***************************/
 
-// selected match
+  // selected match
   @Input()
   url: string = ''
 
   // close modal
   @Output()
   close_modal = new EventEmitter<boolean>()
+
+  @Output() updateEvent = new EventEmitter<any>();
 
   form: FormGroup;
 
@@ -104,8 +106,12 @@ export class MatchStatusServiceComponent extends PrincipalComponent implements O
 
     );
     this.form.reset();
-    this.close_modal.emit(true)
     this.closeModal();
+    this.updateEvent.emit();
   }
+
+  override closeModal() {
+    this.close_modal.emit(true)
+}
 
 }
