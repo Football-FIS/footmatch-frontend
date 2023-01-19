@@ -113,8 +113,7 @@
     </button>
 </div>
 
-<match-status-service ngClass="{{show_modal ? '': 'hidden'}}" [url]="url" (reload)="loadMyStatus()"
-    (close_modal)="closeModal()"></match-status-service>
+<match-status-service ngClass="{{show_modal ? '': 'hidden'}}" [url]="url" (reload)="loadMyStatus()" (close_modal)="onCloseModal($event)"></match-status-service>
 
 
 <!-- Start block -->
