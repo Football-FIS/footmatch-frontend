@@ -28,6 +28,12 @@ export class TeamService {
         return this.httpClient.get<any>(url)
     }
 
+    // GETBYID
+    public getTeamByIdReal(teamId: string): Observable<any> {
+        let url = this.teamUrl + teamId + '/';
+        return this.httpClient.get<any>(url)
+    }
+
     // CREATE
     public createTeam(team: Team): Observable<any> {
         let url = this.teamUrl
