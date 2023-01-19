@@ -45,7 +45,6 @@ export class MatchComponent extends PrincipalComponent implements OnInit {
         this.match = n
         this.loadMyTeam();
         this.loadMyStatus();
-        this.hasBreak();
       },
       error: (e) => {
         this.returnPrincipalError(e)
@@ -64,6 +63,7 @@ export class MatchComponent extends PrincipalComponent implements OnInit {
         this.matchStatusList.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
         this.matchStatus = this.matchStatusList[0];
         this.matchStatusList4update = this.getLatestMatchStatus();
+        this.hasBreak(this.matchStatusList[0]);
       },
       error: (e) => {
         this.returnPrincipalError(e)
@@ -84,9 +84,9 @@ export class MatchComponent extends PrincipalComponent implements OnInit {
     return filteredList.length > 0;
   }
 
-  hasBreak(){
+  hasBreak(matchSt: MatchStatus){
     const estado = "BRE"
-    if(this.matchStatus?.status_type==estado){
+    if(matchSt.status_type==estado){
       this.estadoActual = 'DESCANSO'
     }else if(this.hasStatus(estado)){
       this.estadoActual = "SEGUNDA PARTE"
@@ -115,5 +115,14 @@ export class MatchComponent extends PrincipalComponent implements OnInit {
             this.returnPrincipalError(e)
         }
     })
-}
+  }
+
+  onCloseModal(formData: any) {
+    if (formData) {
+      // se ha enviado el formulario y se cierra el modal
+      this.loadMyStatus();
+    } else {
+      // solo se cierra el modal
+    }
+  }
 }

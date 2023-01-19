@@ -16,7 +16,7 @@ export class MatchStatusServiceComponent extends PrincipalComponent implements O
           GENERAL
   ***************************/
 
-  // selected match
+// selected match
   @Input()
   url: string = ''
 
@@ -104,11 +104,8 @@ export class MatchStatusServiceComponent extends PrincipalComponent implements O
 
     );
     this.form.reset();
+    this.close_modal.emit(true)
     this.closeModal();
   }
-
-  override closeModal() {
-    this.close_modal.emit(true)
-}
 
 }
