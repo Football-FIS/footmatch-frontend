@@ -92,6 +92,8 @@ export class MatchComponent extends PrincipalComponent implements OnInit {
       this.estadoActual = 'DESCANSO'
     }else if(this.hasStatus(estado)){
       this.estadoActual = "SEGUNDA PARTE"
+    }else if(this.matchStatus?.status_type=='END'){
+      this.estadoActual = "PARTIDO FINALIZADO"
     }else{
       this.estadoActual = "PRIMERA PARTE"
     }
