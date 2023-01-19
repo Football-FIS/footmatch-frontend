@@ -108,7 +108,7 @@ export class MatchComponent extends PrincipalComponent implements OnInit {
   }
 
   loadMyTeam() {
-    this.teamService.getTeamById(this.teamuser).subscribe({
+    this.teamService.getTeamByIdReal(this.teamuser).subscribe({
         next: (t) => {
             this.containError = false
             this.my_Team = t
