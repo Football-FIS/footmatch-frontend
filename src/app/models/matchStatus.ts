@@ -20,30 +20,24 @@ export class MatchStatus {
         id: string,
         status_type: string,
         matchId: string,
-        user_id: number,
         info: string,
         date: Date,
         scoreboard: string,
-        uidPlayer: string,
     ) {
         this.id = id
         this.status_type = status_type
         this.matchId = matchId
-        this.user_id = user_id
         this.info = info
         this.date = date
         this.scoreboard = scoreboard
-        this.uidPlayer = uidPlayer
     }
     
     id: string
     status_type: string
     matchId: string
-    user_id: number
     info: string
     date: Date
     scoreboard: string
-    uidPlayer: string
 }
 
 
