@@ -18,11 +18,13 @@ export class MatchStatusServiceComponent extends PrincipalComponent implements O
 
   // selected match
   @Input()
-  url: string | null = null
+  url: string = ''
 
   // close modal
   @Output()
   close_modal = new EventEmitter<boolean>()
+
+  @Output() updateEvent = new EventEmitter<any>();
 
   form: FormGroup;
 
@@ -91,19 +93,11 @@ export class MatchStatusServiceComponent extends PrincipalComponent implements O
 
   onSubmit() {
 
-    // BEARER TEST
-    const httpOptions = {
-      headers: new HttpHeaders({
-        'Content-Type': 'application/json',
-        'Authorization': 'Bearer test'
-      })
-    };
-
     let now = new Date();
     // this.my_matchStatus.values = this.selected_matchStatus;
     this.form.patchValue({ date: now });
-    this.form.patchValue({ user_id: 2147483647, uidPlayer: "null" });
-    console.log(this.form.value)
+    //let matchStatus = new MatchStatus('', this.form.value.status_type, this.url, this.form.value.info, this.form.value.date, this.form.value.scoreboard)
+
     this.matchStatus.postMatchStatus(this.form).subscribe(
 
       (response: any) => console.log(response),
@@ -113,11 +107,12 @@ export class MatchStatusServiceComponent extends PrincipalComponent implements O
     );
     this.form.reset();
     this.closeModal();
+    this.updateEvent.emit();
   }
 
   override closeModal() {
     this.close_modal.emit(true)
-    location.reload();
+    window.location.reload();
 }
 
 }

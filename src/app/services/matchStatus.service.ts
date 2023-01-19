@@ -34,14 +34,24 @@ export class MatchStatusService {
     // CREATE
     public createMatchStatus(matchStatus: MatchStatus): Observable<any> {
         let url = this.matchStatusUrl
-        return this.httpClient.post<any>(url, matchStatus)
+        let token = this.tokenService.getToken()
+        let httpOptions = {
+            headers: new HttpHeaders({
+            'Content-Type':  'application/json',
+            'Authorization': 'Bearer ' + token
+            })
+        };
+
+        return this.httpClient.post<any>(url, matchStatus, httpOptions)
     }
     // POST TEMPORAL
     public postMatchStatus(form:FormGroup): Observable<any> {
+        
+      let token = this.tokenService.getToken()
       let httpOptions = {
         headers: new HttpHeaders({
           'Content-Type':  'application/json',
-          'Authorization': 'Bearer test'
+          'Authorization': 'Bearer ' + token
         })
       };
       let url = this.matchStatusUrl

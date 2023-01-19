@@ -1,0 +1,19 @@
+.status-box {
+    border: 2px solid black;
+    padding: 10px;
+    background-color: #00008B; /* Azul marino */
+    color: white;
+    width: 300px; /* Tamaño deseado */
+    border-radius: 20px; /* Redondez deseada */
+    margin: 0 auto;
+  }
+  
+  .blinking-dot {
+    animation: blinker 1s linear infinite;
+  }
+  
+  @keyframes blinker {
+    50% {
+      opacity: 0;
+    }
+  }
