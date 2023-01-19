@@ -1,39 +1,8 @@
 <div class="z-10" role="dialog">
-    <div class="flex max-w-screen-xl px-4 pt-20 pb-8 mx-auto lg:py-16 lg:pt-28">
-        <div class="mx-auto place-self-center text-center" *ngIf="!matchStatusList.length">
-            <h1 class="max-w-xl mb-4 text-3xl font-extrabold leading-none tracking-tight text-blue-600 ">
-                #{{url}}
-            </h1>
-            <h1
-                class="mt-10 max-w-xl mb-4 text-8xl font-extrabold leading-none tracking-tight dark:text-white light:text-black">
-                0 - 0
-            </h1>
-            <div class="status-box" style="color:white;">
-                PARTIDO NO COMENZADO
-            </div>
-            <h1
-                class="mt-10 max-w-xl mb-4 text-6xl font-extrabold leading-none tracking-tight dark:text-white light:text-black">
-                {{local}} | {{oponente}}
-            </h1>
-        </div>
+    <div class="grid max-w-screen-xl px-4 pt-20 pb-8 mx-auto lg:py-16 lg:pt-28">
 
-        <div class="mx-auto place-self-center text-center" *ngIf="matchStatusList.length && matchStatus!=null">
-            <h1 class="max-w-xl mb-4 text-3xl font-extrabold leading-none tracking-tight text-blue-600">
-                #{{url}}
-            </h1>
-            <h1 class="mt-10 max-w-xl mb-4 text-8xl font-extrabold leading-none tracking-tight">
-                {{matchStatus.scoreboard}}
-            </h1>
-            <div class="status-box" style="color:white;">
-                <span class="blinking-dot" style="color: red;">&#9679;</span>
-                {{estadoActual}}
-            </div>
-            <h1 class="mt-10 max-w-xl mb-4 text-6xl font-extrabold leading-none tracking-tight">
-                {{local}} | {{oponente}}
-            </h1>
-        </div>
-
-        <div class="flex">
+        <!-- WEATHER -->
+        <div class="flex place-self-end">
 
             <!-- weather image -->
             <div class="mx-3">
@@ -97,6 +66,41 @@
             <!-- weather temp -->
             <div class="mx-3 text-4xl dark:text-white light:text-black">{{temperature}}</div>
         </div>
+
+        <!-- COUNTER -->
+        <div class="mx-auto place-self-center text-center" *ngIf="!matchStatusList.length">
+            <h1 class="max-w-xl mb-4 text-3xl font-extrabold leading-none tracking-tight text-blue-600 ">
+                #{{url}}
+            </h1>
+            <h1
+                class="mt-10 max-w-xl mb-4 text-8xl font-extrabold leading-none tracking-tight dark:text-white light:text-black">
+                0 - 0
+            </h1>
+            <div class="status-box" style="color:white;">
+                PARTIDO NO COMENZADO
+            </div>
+            <h1
+                class="mt-10 max-w-xl mb-4 text-6xl font-extrabold leading-none tracking-tight dark:text-white light:text-black">
+                {{local}} | {{oponente}}
+            </h1>
+        </div>
+
+        <div class="mx-auto place-self-center text-center" *ngIf="matchStatusList.length && matchStatus!=null">
+            <h1 class="max-w-xl mb-4 text-3xl font-extrabold leading-none tracking-tight text-blue-600">
+                #{{url}}
+            </h1>
+            <h1 class="mt-10 max-w-xl mb-4 text-8xl font-extrabold leading-none tracking-tight">
+                {{matchStatus.scoreboard}}
+            </h1>
+            <div class="status-box" style="color:white;">
+                <span class="blinking-dot" style="color: red;">&#9679;</span>
+                {{estadoActual}}
+            </div>
+            <h1 class="mt-10 max-w-xl mb-4 text-6xl font-extrabold leading-none tracking-tight">
+                {{local}} | {{oponente}}
+            </h1>
+        </div>
+
     </div>
 </div>
 
