@@ -3,11 +3,11 @@
       <path d="M4 2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1Zm3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1Zm3.5-.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1ZM4 5.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1ZM7.5 5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1Zm2.5.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1ZM4.5 8a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1Zm2.5.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1Zm3.5-.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1Z"/>
       <path d="M2 1a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V1Zm11 0H3v14h3v-2.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 .5.5V15h3V1Z"/>
     </svg>
-    <span class="text-2xl font-bold">Team</span>
+    <span class="text-2xl font-bold dark:text-white light:text-black">Team</span>
 </div>
 
 <div *ngIf="team == null" class="bot">
-    <div class="bot">
+    <div class="bot dark:text-white light:text-black">
       You don't have a team created yet.
     </div>
     <br>
@@ -17,63 +17,63 @@
 </div>
 
 <div *ngIf="team != null">
-  <h4 class="text-xl text-gray-900 font-bold">Information</h4>
+  <h4 class="text-xl text-gray-900 font-bold dark:text-white light:text-black">Information</h4>
   <ul class="mt-2 text-gray-700">
       <li class="flex border-y py-2">
-          <span class="font-bold w-36">Name:</span>
-          <span class="text-gray-700">{{team.name}}</span>
+          <span class="font-bold w-36 dark:text-white light:text-black">Name:</span>
+          <span class="text-gray-700 dark:text-white light:text-black">{{team.name}}</span>
       </li>
       <li class="flex border-b py-2">
-          <span class="font-bold w-36">Country:</span>
-          <span class="text-gray-700">{{team.country}}</span>
+          <span class="font-bold w-36 dark:text-white light:text-black">Country:</span>
+          <span class="text-gray-700 dark:text-white light:text-black">{{team.country}}</span>
       </li>
       <li class="flex border-b py-2">
-          <span class="font-bold w-36">State:</span>
-          <span class="text-gray-700">{{team.state}}</span>
+          <span class="font-bold w-36 dark:text-white light:text-black">State:</span>
+          <span class="text-gray-700 dark:text-white light:text-black">{{team.state}}</span>
       </li>
       <li class="flex border-b py-2">
-          <span class="font-bold w-36">City:</span>
-          <span class="text-gray-700">{{team.city}}</span>
+          <span class="font-bold w-36 dark:text-white light:text-black">City:</span>
+          <span class="text-gray-700 dark:text-white light:text-black">{{team.city}}</span>
       </li>
       <li class="flex border-b py-2">
-          <span class="font-bold w-36">Address:</span>
-          <span class="text-gray-700">{{team.address}}</span>
+          <span class="font-bold w-36 dark:text-white light:text-black">Address:</span>
+          <span class="text-gray-700 dark:text-white light:text-black">{{team.address}}</span>
       </li>
       <li class="flex border-b py-2">
-          <span class="font-bold w-36">Coach Name:</span>
-          <span class="text-gray-700">{{team.coach_name}}</span>
+          <span class="font-bold w-36 dark:text-white light:text-black">Coach Name:</span>
+          <span class="text-gray-700 dark:text-white light:text-black">{{team.coach_name}}</span>
       </li>
       <li class="flex border-b py-2">
-          <span class="font-bold w-36">Stadium Name:</span>
-          <span class="text-gray-700">{{team.stadium_name}}</span>
+          <span class="font-bold w-36 dark:text-white light:text-black">Stadium Name:</span>
+          <span class="text-gray-700 dark:text-white light:text-black">{{team.stadium_name}}</span>
       </li>
       <li class="flex border-b py-2">
-        <span class="font-bold w-36">Capacity Stadium:</span>
-        <span class="text-gray-700">{{team.capacity_stadium}}</span>
+        <span class="font-bold w-36 dark:text-white light:text-black">Capacity Stadium:</span>
+        <span class="text-gray-700 dark:text-white light:text-black">{{team.capacity_stadium}}</span>
       </li>
       <li class="flex border-b py-2">
-        <span class="font-bold w-36">President Name:</span>
-        <span class="text-gray-700">{{team.president_name}}</span>
+        <span class="font-bold w-36 dark:text-white light:text-black">President Name:</span>
+        <span class="text-gray-700 dark:text-white light:text-black">{{team.president_name}}</span>
       </li>
       <li class="flex border-b py-2">
-        <span class="font-bold w-36">League name:</span>
-        <span class="text-gray-700">{{team.league_name}}</span>
+        <span class="font-bold w-36 dark:text-white light:text-black">League name:</span>
+        <span class="text-gray-700 dark:text-white light:text-black">{{team.league_name}}</span>
       </li>
       <li class="flex border-b py-2">
-        <span class="font-bold w-36">Latitude:</span>
-        <span class="text-gray-700">{{team.latitude}}</span>
+        <span class="font-bold w-36 dark:text-white light:text-black">Latitude:</span>
+        <span class="text-gray-700 dark:text-white light:text-black">{{team.latitude}}</span>
       </li>
       <li class="flex border-b py-2">
-        <span class="font-bold w-36">Longuitude:</span>
-        <span class="text-gray-700">{{team.longuitude}}</span>
+        <span class="font-bold w-36 dark:text-white light:text-black">Longuitude:</span>
+        <span class="text-gray-700 dark:text-white light:text-black">{{team.longuitude}}</span>
       </li>
       <li class="flex border-b py-2">
-        <span class="font-bold w-36">Expiration:</span>
-        <span class="text-gray-700">{{team.expiration}}</span>
+        <span class="font-bold w-36 dark:text-white light:text-black">Expiration:</span>
+        <span class="text-gray-700 dark:text-white light:text-black">{{team.expiration}}</span>
       </li>
       <li class="flex border-b py-2">
-        <span class="font-bold w-36">Plan Type:</span>
-        <span class="text-gray-700">{{team.plan_type}}</span>
+        <span class="font-bold w-36 dark:text-white light:text-black">Plan Type:</span>
+        <span class="text-gray-700 dark:text-white light:text-black">{{team.plan_type}}</span>
       </li>
   </ul>
   <div class="flex mt-6">
