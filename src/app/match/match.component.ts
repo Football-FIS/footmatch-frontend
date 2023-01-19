@@ -45,8 +45,8 @@ export class MatchComponent extends PrincipalComponent implements OnInit {
         this.containError = false
         this.match = n
         this.loadMatchInfo();
-        this.loadMyStatus();
         this.loadMyTeam();
+        this.loadMyStatus();
         this.hasBreak();
       },
       error: (e) => {
