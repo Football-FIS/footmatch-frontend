@@ -91,20 +91,12 @@ export class MatchStatusServiceComponent extends PrincipalComponent implements O
 
   onSubmit() {
 
-    // BEARER TEST
-    const httpOptions = {
-      headers: new HttpHeaders({
-        'Content-Type': 'application/json',
-        'Authorization': 'Bearer test'
-      })
-    };
-
     let now = new Date();
     // this.my_matchStatus.values = this.selected_matchStatus;
     this.form.patchValue({ date: now });
-    let matchStatus = new MatchStatus('', this.form.value.status_type, this.url, this.form.value.info, this.form.value.date, this.form.value.scoreboard)
+    //let matchStatus = new MatchStatus('', this.form.value.status_type, this.url, this.form.value.info, this.form.value.date, this.form.value.scoreboard)
 
-    this.matchStatus.createMatchStatus(matchStatus).subscribe(
+    this.matchStatus.postMatchStatus(this.form).subscribe(
 
       (response: any) => console.log(response),
 
@@ -117,7 +109,6 @@ export class MatchStatusServiceComponent extends PrincipalComponent implements O
 
   override closeModal() {
     this.close_modal.emit(true)
-    location.reload();
 }
 
 }
