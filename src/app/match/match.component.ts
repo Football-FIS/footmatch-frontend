@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Match } from '../models/match';
 import { MatchStatus } from '../models/matchStatus';
-import { Team } from '../models/team';
 import { PrincipalComponent } from '../principal.component';
 import { MatchService } from '../services/match.service';
 import { MatchStatusService } from '../services/matchStatus.service';
@@ -23,6 +22,8 @@ export class MatchComponent extends PrincipalComponent implements OnInit {
   local: string | null | undefined;
   oponente: string | null | undefined;
   teamuser: any = null;
+  weather: any
+  temperature: any
   
   constructor(private route: ActivatedRoute, private matchService: MatchService, private tokenService: TokenService, private matchStatusService: MatchStatusService, private teamService: TeamService) {
     super();
@@ -43,6 +44,7 @@ export class MatchComponent extends PrincipalComponent implements OnInit {
       next: (n) => {
         this.containError = false
         this.match = n
+        this.getWeather()
         this.loadMyTeam();
         this.loadMyStatus();
         this.hasBreak();
@@ -115,5 +117,24 @@ export class MatchComponent extends PrincipalComponent implements OnInit {
             this.returnPrincipalError(e)
         }
     })
-}
+  }
+
+  getWeather() {
+    // pictures only
+    this.weather = null
+    this.temperature = null
+    if (this.match && this.match.weather) {
+      // temperatures (ºC)
+      let t = this.match.weather.split('Temperatura: ')[1].split('.')[0]
+      this.temperature = t + ' ºC'
+      // pictures
+      if (this.match.weather.includes('rain')) {
+        this.weather = 'rainy'
+      } else if(this.match.weather.includes('cloud')) {
+        this.weather = 'cloudy'
+      } else {
+        this.weather = 'sunny'
+      }
+    }
+  }
 }
